@@ -1,0 +1,3 @@
+C:/Users/GF76/Desktop/OACPROYECTO/cmake-build-debug/CMakeFiles/OACPROYECTO.dir
+C:/Users/GF76/Desktop/OACPROYECTO/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/GF76/Desktop/OACPROYECTO/cmake-build-debug/CMakeFiles/rebuild_cache.dir
