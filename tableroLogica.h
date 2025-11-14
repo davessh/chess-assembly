@@ -6,6 +6,7 @@ public:
    tableroLogica(int valor);
 
    void setValor(int valor);
+
    int getValor() const;
 
 private:

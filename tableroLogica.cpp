@@ -11,5 +11,4 @@ void tableroLogica::setValor(int valor){
 
 int tableroLogica::getValor() const {
     return datos;
-    //prueba
 }
