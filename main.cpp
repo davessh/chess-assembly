@@ -1,5 +1,13 @@
-//
-// Created by GF76 on 13/11/2025.
-//
+#include <iostream>
+#include "tableroLogica.h"
 
-#include "main.h"
+int main(){
+    tableroLogica obj(10);
+    std::cout << obj.getValor() << std::endl;
+
+    obj.setValor(24);
+    std::cout << obj.getValor() << std::endl;
+
+    return 0;
+
+}
