@@ -1,12 +1,5 @@
 # ninja log v6
-5	521	7849963221075452	CMakeFiles/OACPROYECTO.dir/main.cpp.obj	e6b503365bfd015d
-522	699	7849963226246729	OACPROYECTO.exe	75f5f60656d7efc8
-13	457	7848044930644245	CMakeFiles/OACPROYECTO.dir/tableroLogica.cpp.obj	23b7681fee48bb38
-14	522	7849963221165988	CMakeFiles/OACPROYECTO.dir/Logica/tableroLogica.cpp.obj	70bd5726c401a255
-13	484	7849996095463771	C:/Users/rogel/CLionProjects/chess-assembly_project/cmake-build-debug/cmake_install.cmake	e85a4899b7eaf52d
-13	484	7849996095504124	build.ninja	e85a4899b7eaf52d
-2	353	7849996095504124	build.ninja	e85a4899b7eaf52d
-2	353	7849996095504124	C:/Users/rogel/CLionProjects/chess-assembly_project/cmake-build-debug/cmake_install.cmake	e85a4899b7eaf52d
-2	576	7849996095873105	CMakeFiles/OACPROYECTO.dir/Chess/Src/main.cpp.obj	9867250d41b6be5d
-5	495	7849996454651423	CMakeFiles/OACPROYECTO.dir/Chess/Src/Tablero.cpp.obj	2572cb8fafb5d2df
 496	634	7849996459554522	OACPROYECTO.exe	1524b05cff65b572
+5	495	7849996454651423	CMakeFiles/OACPROYECTO.dir/Chess/Src/Tablero.cpp.obj	2572cb8fafb5d2df
+2	353	7850142278218771	build.ninja	e85a4899b7eaf52d
+2	576	7849996095873105	CMakeFiles/OACPROYECTO.dir/Chess/Src/main.cpp.obj	9867250d41b6be5d

@@ -6,6 +6,12 @@
 #include <iostream>
 
 #include "../Piezas/Pieza.h"
+#include "../Piezas/Peon.h"
+#include "../Piezas/Torre.h"
+#include "../Piezas/Caballo.h"
+#include "../Piezas/Alfil.h"
+#include "../Piezas/Reina.h"
+#include "../Piezas/Rey.h"
 
 class Tablero {
 private:
@@ -14,11 +20,46 @@ private:
 public:
     Tablero() {
         limpiar();
+        inicializar();
     }
 
     void inicializar() {
-        // Implementar inicialización del tablero con las piezas
+        //Poner piezas en el tablero
+
+        //peon blanco en fila 6
+        for(int columna = 0; columna < 8; columna++) {
+            establecerPiezaEn(Posicion(6,columna),
+                 std::make_shared<Peon>(Color::BLANCO, Posicion(6, columna)));
+        }
+
+        //peon negro en fila 1
+        for(int columna = 0; columna < 8; columna++){
+            establecerPiezaEn(Posicion(1,columna),
+            std::make_shared<Peon>(Color::NEGRO, Posicion(1,columna)));
+        }
+
+        //Piezas blancas
+        establecerPiezaEn(Posicion(7, 0), std::make_shared<Torre>(Color::BLANCO, Posicion(7, 0)));
+        establecerPiezaEn(Posicion(7, 1), std::make_shared<Caballo>(Color::BLANCO, Posicion(7, 1)));
+        establecerPiezaEn(Posicion(7, 2), std::make_shared<Alfil>(Color::BLANCO, Posicion(7, 2)));
+        establecerPiezaEn(Posicion(7, 3), std::make_shared<Reina>(Color::BLANCO, Posicion(7, 3)));
+        establecerPiezaEn(Posicion(7, 4), std::make_shared<Rey>(Color::BLANCO, Posicion(7, 4)));
+        establecerPiezaEn(Posicion(7, 5), std::make_shared<Alfil>(Color::BLANCO, Posicion(7, 5)));
+        establecerPiezaEn(Posicion(7, 6), std::make_shared<Caballo>(Color::BLANCO, Posicion(7, 6)));
+        establecerPiezaEn(Posicion(7, 7), std::make_shared<Torre>(Color::BLANCO, Posicion(7, 7)));
+
+        //Piezas negras
+        establecerPiezaEn(Posicion(0, 0), std::make_shared<Torre>(Color::NEGRO, Posicion(0, 0)));
+        establecerPiezaEn(Posicion(0, 1), std::make_shared<Caballo>(Color::NEGRO, Posicion(0, 1)));
+        establecerPiezaEn(Posicion(0, 2), std::make_shared<Alfil>(Color::NEGRO, Posicion(0, 2)));
+        establecerPiezaEn(Posicion(0, 3), std::make_shared<Reina>(Color::NEGRO, Posicion(0, 3)));
+        establecerPiezaEn(Posicion(0, 4), std::make_shared<Rey>(Color::NEGRO, Posicion(0, 4)));
+        establecerPiezaEn(Posicion(0, 5), std::make_shared<Alfil>(Color::NEGRO, Posicion(0, 5)));
+        establecerPiezaEn(Posicion(0, 6), std::make_shared<Caballo>(Color::NEGRO, Posicion(0, 6)));
+        establecerPiezaEn(Posicion(0, 7), std::make_shared<Torre>(Color::NEGRO, Posicion(0, 7)));
     }
+
+
 
     void limpiar() {
         for (int i = 0; i < 8; i++) {
