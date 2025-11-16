@@ -49,19 +49,19 @@ cmake_ninja_workdir = C$:/Users/rogel/CLionProjects/chess-assembly_project/cmake
 
 build cmake_object_order_depends_target_OACPROYECTO: phony || .
 
-build CMakeFiles/OACPROYECTO.dir/main.cpp.obj: CXX_COMPILER__OACPROYECTO_unscanned_Debug C$:/Users/rogel/CLionProjects/chess-assembly_project/main.cpp || cmake_object_order_depends_target_OACPROYECTO
+build CMakeFiles/OACPROYECTO.dir/Chess/Src/main.cpp.obj: CXX_COMPILER__OACPROYECTO_unscanned_Debug C$:/Users/rogel/CLionProjects/chess-assembly_project/Chess/Src/main.cpp || cmake_object_order_depends_target_OACPROYECTO
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\OACPROYECTO.dir\main.cpp.obj.d
+  DEP_FILE = CMakeFiles\OACPROYECTO.dir\Chess\Src\main.cpp.obj.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\OACPROYECTO.dir
-  OBJECT_FILE_DIR = CMakeFiles\OACPROYECTO.dir
+  OBJECT_FILE_DIR = CMakeFiles\OACPROYECTO.dir\Chess\Src
 
-build CMakeFiles/OACPROYECTO.dir/tableroLogica.cpp.obj: CXX_COMPILER__OACPROYECTO_unscanned_Debug C$:/Users/rogel/CLionProjects/chess-assembly_project/tableroLogica.cpp || cmake_object_order_depends_target_OACPROYECTO
+build CMakeFiles/OACPROYECTO.dir/Chess/Src/Tablero.cpp.obj: CXX_COMPILER__OACPROYECTO_unscanned_Debug C$:/Users/rogel/CLionProjects/chess-assembly_project/Chess/Src/Tablero.cpp || cmake_object_order_depends_target_OACPROYECTO
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\OACPROYECTO.dir\tableroLogica.cpp.obj.d
+  DEP_FILE = CMakeFiles\OACPROYECTO.dir\Chess\Src\Tablero.cpp.obj.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\OACPROYECTO.dir
-  OBJECT_FILE_DIR = CMakeFiles\OACPROYECTO.dir
+  OBJECT_FILE_DIR = CMakeFiles\OACPROYECTO.dir\Chess\Src
 
 
 # =============================================================================
@@ -71,7 +71,7 @@ build CMakeFiles/OACPROYECTO.dir/tableroLogica.cpp.obj: CXX_COMPILER__OACPROYECT
 #############################################
 # Link the executable OACPROYECTO.exe
 
-build OACPROYECTO.exe: CXX_EXECUTABLE_LINKER__OACPROYECTO_Debug CMakeFiles/OACPROYECTO.dir/main.cpp.obj CMakeFiles/OACPROYECTO.dir/tableroLogica.cpp.obj
+build OACPROYECTO.exe: CXX_EXECUTABLE_LINKER__OACPROYECTO_Debug CMakeFiles/OACPROYECTO.dir/Chess/Src/main.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Src/Tablero.cpp.obj
   CONFIG = Debug
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
