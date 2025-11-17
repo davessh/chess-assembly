@@ -2,25 +2,19 @@
 #define OACPROYECTO_PEON_H
 
 #include "Pieza.h"
+#include <vector>
 
 class Peon : public Pieza {
+private:
+    bool alPaso;
+    bool llegoAlFinal;
 public:
-    Peon(Color c, Posicion pos) : Pieza(TipoPieza::PEON, c, pos) {}
+    Peon(Color colorJugador, int fila, int columna)
+        : Pieza(TipoPieza::PEON, colorJugador, fila, columna),
+          alPaso(false), llegoAlFinal(false) {}
 
-    std::vector<Posicion> obtenerMovimientosPosibles(const Tablero& tablero) const override {
-        std::vector<Posicion> movimientos;
-        // Implementar lógica
-        return movimientos;
-    }
 
-    bool esMovimientoValido(const Posicion& destino, const Tablero& tablero) const override {
-        // Implementar lógica
-        return false;
-    }
-
-    char obtenerSimbolo() const override {
-        return color == Color::BLANCO ? 'P' : 'p';
-    }
 };
+
 
 #endif

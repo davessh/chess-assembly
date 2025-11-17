@@ -17,5 +17,16 @@ add_executable(OACPROYECTO
         Chess/Src/Movimiento.h
         Chess/Src/Movimiento.h
         Chess/Src/Juego.h
+        Chess/Piezas/Alfil.cpp
+        Chess/Piezas/Pieza.cpp
+        Chess/Piezas/Torre.cpp
+        Chess/Piezas/Rey.cpp
+        Chess/Piezas/Reina.cpp
+        Chess/Piezas/Caballo.cpp
+        Chess/Piezas/Peon.cpp
+        Chess/GUI/TableroInterfaz.h
+        Chess/Piezas/Casilla.h
+        Chess/Piezas/Casilla.cpp
+        Chess/Piezas/Pieza.cpp
 
 )

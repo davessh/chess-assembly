@@ -7,6 +7,7 @@
 #include "../Piezas/Caballo.h"
 #include <iostream>
 
+
 int main() {
     Juego juego;
     juego.iniciar();

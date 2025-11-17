@@ -1,12 +1,8 @@
-// ============================================
-// Pieza.hpp
-// ============================================
-#ifndef OACPROYECTO_PIEZA_H
-#define OACPROYECTO_PIEZA_H
+#ifndef PIEZA_H
+#define PIEZA_H
 
-#include <string>
-#include <vector>
-#include <memory>
+
+class Casilla;
 
 enum class TipoPieza {
     PEON,
@@ -22,40 +18,35 @@ enum class Color {
     NEGRO
 };
 
-struct Posicion {
-    int fila;
-    int columna;
 
-    Posicion(int f = 0, int c = 0) : fila(f), columna(c) {}
-    bool operator==(const Posicion& otra) const {
-        return fila == otra.fila && columna == otra.columna;
-    }
-};
-
-class Tablero; // Forward declaration
 
 class Pieza {
 protected:
     TipoPieza tipo;
     Color color;
-    Posicion posicion;
+    bool puedeJugarse;
     bool seHaMovido;
+    int fila;
+    int columna;
 
 public:
-    Pieza(TipoPieza t, Color c, Posicion pos) : tipo(t), color(c), posicion(pos), seHaMovido(false) {}
-    virtual ~Pieza() = default;
+    Pieza(TipoPieza tipo, Color colorJugador, int fila, int columna, bool puedeJugarse = true, bool seHaMovido = false);
 
-    virtual std::vector<Posicion> obtenerMovimientosPosibles(const Tablero& tablero) const = 0;
-    virtual bool esMovimientoValido(const Posicion& destino, const Tablero& tablero) const = 0;
-    virtual char obtenerSimbolo() const = 0;
+    bool movimientoValido(Casilla origen, Casilla destino) const;
 
-    TipoPieza obtenerTipo() const { return tipo; }
-    Color obtenerColor() const { return color; }
-    Posicion obtenerPosicion() const { return posicion; }
-    bool haMovido() const { return seHaMovido; }
+    void setMovido(bool valor) { seHaMovido = valor; }
+    void setColor(Color color) { this->color = color; }
+    void setFila(int fila) { this->fila = fila; }
+    void setColumna(int columna) { this->columna = columna; }
+    void setTipo(TipoPieza tipo) { this->tipo = tipo; }
+    void setPuedeJugarse(bool valor) { this->puedeJugarse = valor; }
 
-    void establecerPosicion(const Posicion& pos) { posicion = pos; }
-    void establecerSeHaMovido(bool movido) { seHaMovido = movido; }
+
+    Color getColor() const { return color; }
+    int getFila() const { return fila; }
+    int getColumna() const { return columna; }
+    TipoPieza getTipo() const { return tipo; }
+    bool getSeHaMovido() const { return seHaMovido; }
 };
 
 #endif
