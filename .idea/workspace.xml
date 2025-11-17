@@ -19,9 +19,7 @@
     <option name="reloaded" value="true" />
   </component>
   <component name="CMakeRunConfigurationManager">
-    <generated>
-      <config projectName="OACPROYECTO" targetName="OACPROYECTO" />
-    </generated>
+    <generated />
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -30,45 +28,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c393a84f-e579-43a2-8110-cdc3f17f85d3" name="Changes" comment="Reorganizacion de la estructura de juego.">
-      <change afterPath="$PROJECT_DIR$/Chess/GUI/TableroInterfaz.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chess/Piezas/Alfil.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chess/Piezas/Caballo.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chess/Piezas/Casilla.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chess/Piezas/Peon.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chess/Piezas/Reina.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chess/Piezas/Rey.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chess/Piezas/Torre.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_11_2025_09_55_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_11_2025_09_55_p__m___Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Caballo.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Caballo.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Peon.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Peon.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Pieza.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Pieza.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Reina.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Reina.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Rey.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Rey.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Torre.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Torre.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Src/Juego.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Src/Juego.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Src/Movimiento.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Src/Tablero.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Src/Tablero.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Src/Tablero.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Src/Tablero.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Torre.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Torre.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/OACPROYECTO.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
     </list>
-    <list id="eefb2fa7-300b-41c2-851f-19b8e05709e4" name="Changes by GF76" comment="">
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Alfil.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Alfil.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Reina.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Reina.h" afterDir="false" />
-    </list>
+    <list id="eefb2fa7-300b-41c2-851f-19b8e05709e4" name="Changes by GF76" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,27 +78,16 @@
     &quot;assignee&quot;: &quot;davessh&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/davessh/chess-assembly.git&quot;,
-    &quot;accountId&quot;: &quot;e62c4243-289b-43ec-bc64-872f412034e5&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/davessh/chess-assembly.git",
+    "accountId": "40889b70-8c06-49b4-bc7d-e9f964432b78"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Chess/Piezas/Piece.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chess/Src/tableroLogica.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Chess/Src/tableroLogica.h" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/Chess/Piezas/Reina.h">
-      <ranges>
-        <range start1="0" end1="2" start2="0" end2="6" changelist="c393a84f-e579-43a2-8110-cdc3f17f85d3" />
-        <range start1="7" end1="14" start2="11" end2="11" changelist="c393a84f-e579-43a2-8110-cdc3f17f85d3" />
-        <range start1="15" end1="19" start2="12" end2="13" changelist="c393a84f-e579-43a2-8110-cdc3f17f85d3" />
-        <range start1="20" end1="24" start2="14" end2="15" changelist="c393a84f-e579-43a2-8110-cdc3f17f85d3" />
-        <range start1="25" end1="26" start2="16" end2="16" changelist="eefb2fa7-300b-41c2-851f-19b8e05709e4" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -185,24 +139,15 @@
       <recent name="C:\Users\rogel\CLionProjects\chess-assembly_project\Logica" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.OACPROYECTO">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="OACPROYECTO" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
       <method v="2" />
     </configuration>
-    <configuration name="OACPROYECTO" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OACPROYECTO" TARGET_NAME="OACPROYECTO" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OACPROYECTO" RUN_TARGET_NAME="OACPROYECTO">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="CMake Application.OACPROYECTO" />
-      <item itemvalue="CMake Debug.OACPROYECTO" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="CMake Debug.OACPROYECTO" />
@@ -231,6 +176,7 @@
       <workItem from="1763351201976" duration="31000" />
       <workItem from="1763351407515" duration="125000" />
       <workItem from="1763354473987" duration="306000" />
+      <workItem from="1763403674380" duration="3086000" />
     </task>
     <task id="LOCAL-00001" summary="prueba inicial">
       <option name="closed" value="true" />
