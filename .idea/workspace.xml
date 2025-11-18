@@ -29,35 +29,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c393a84f-e579-43a2-8110-cdc3f17f85d3" name="Changes" comment="Base grafica creada.">
-      <change afterPath="$PROJECT_DIR$/Chess/Src/Juego.cpp" afterDir="false" />
+    <list default="true" id="c393a84f-e579-43a2-8110-cdc3f17f85d3" name="Changes" comment="Base para trabajar con GUI incluida creada.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Alfil.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Alfil.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Alfil.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Alfil.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Caballo.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Caballo.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Caballo.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Caballo.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Casilla.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Casilla.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Peon.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Peon.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Peon.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Peon.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Pieza.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Pieza.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Pieza.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Pieza.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Reina.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Reina.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Reina.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Reina.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Rey.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Rey.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Rey.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Rey.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Torre.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Torre.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Torre.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Torre.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Src/Juego.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Src/Juego.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Src/Tablero.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Src/Tablero.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Src/Tablero.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Src/Tablero.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
     </list>
     <list id="eefb2fa7-300b-41c2-851f-19b8e05709e4" name="Changes by GF76" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -201,11 +175,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="CMake Application.OACPROYECTO" />
       <item itemvalue="CMake Debug.OACPROYECTO" />
@@ -240,7 +209,8 @@
       <workItem from="1763354473987" duration="306000" />
       <workItem from="1763377958550" duration="1767000" />
       <workItem from="1763407654955" duration="14279000" />
-      <workItem from="1763424612589" duration="8147000" />
+      <workItem from="1763424612589" duration="8200000" />
+      <workItem from="1763433217040" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary="prueba inicial">
       <option name="closed" value="true" />
@@ -282,7 +252,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763430356243</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Base para trabajar con GUI incluida creada.">
+      <option name="closed" value="true" />
+      <created>1763432857320</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1763432857321</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +287,8 @@
     <MESSAGE value="Correccion de problemas al compilar." />
     <MESSAGE value="Creacion de movimientos de parte de las fichas y reestructuracion de codigo." />
     <MESSAGE value="Base grafica creada." />
-    <option name="LAST_COMMIT_MESSAGE" value="Base grafica creada." />
+    <MESSAGE value="Base para trabajar con GUI incluida creada." />
+    <option name="LAST_COMMIT_MESSAGE" value="Base para trabajar con GUI incluida creada." />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

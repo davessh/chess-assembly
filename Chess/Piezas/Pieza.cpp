@@ -1,8 +1,23 @@
+// Pieza.cpp
 #include "Pieza.h"
-#include "../Src/Tablero.h"
 #include "Casilla.h"
-// Constructor de Pieza
-Pieza::Pieza(TipoPieza tipo, Color colorJugador, int fila, int columna, bool puedeJugarse, bool seHaMovido)
-    : tipo(tipo), color(colorJugador), fila(fila), columna(columna), 
-      puedeJugarse(puedeJugarse), seHaMovido(seHaMovido) {
+// (y los includes necesarios para Casilla y Tablero)
+
+// Constructor
+Pieza::Pieza(TipoPieza tipo, Color colorJugador, int fila, int columna,
+             bool puedeJugarse, bool seHaMovido)
+    : tipo(tipo),
+      color(colorJugador),
+      puedeJugarse(puedeJugarse),
+      seHaMovido(seHaMovido),
+      fila(fila),
+      columna(columna)
+{
+}
+
+// Implementación por defecto
+bool Pieza::movimientoValido(Casilla origen, Casilla destino, Tablero& tablero)
+{
+    // Lógica genérica o simplemente:
+    return false;
 }
