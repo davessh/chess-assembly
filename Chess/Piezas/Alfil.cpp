@@ -1,8 +1,16 @@
-#include "Pieza.h"
+#include "Alfil.h"
 
-class Alfil : public Pieza {
-public:
+bool Alfil::movimientoValido(Casilla origen, Casilla destino) const {
+    if (origen.getPieza() == nullptr) return false;
 
+    bool sonIguales = (origen.getFila() == destino.getFila()) &&
+                      (origen.getColumna() == destino.getColumna());
+    if (sonIguales) return false;
 
+    // El alfil se mueve en diagonal
+    int difFila = abs(destino.getFila() - origen.getFila());
+    int difCol = abs(destino.getColumna() - origen.getColumna());
+
+    return difFila == difCol && difFila > 0;
 };
 

@@ -9,6 +9,9 @@ public:
     Caballo(Color colorJugador, int fila, int columna)
         : Pieza(TipoPieza::CABALLO, colorJugador, fila, columna) {}
 
+    bool movimientoValido(Casilla origen, Casilla destino) const override;
+
+
 };
 
 #endif

@@ -1,13 +1,15 @@
-// Rey.hpp
-#ifndef REY_H
-#define REY_H
+#ifndef OACPROYECTO_REY_H
+#define OACPROYECTO_REY_H
 
 #include "Pieza.h"
 #include <vector>
 
 class Rey : public Pieza {
 public:
+    Rey(Color colorJugador, int fila, int columna)
+        : Pieza(TipoPieza::REY, colorJugador, fila, columna) {}
 
+    bool movimientoValido(Casilla origen, Casilla destino) const override;
 };
 
-#endif // REY_H
+#endif

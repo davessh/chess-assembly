@@ -1,21 +1,12 @@
-#include "Juego.h"
-#include "../Piezas/Peon.h"
-#include "../Piezas/Alfil.h"
-#include "../Piezas/Torre.h"
-#include "../Piezas/Reina.h"
-#include "../Piezas/Rey.h"
-#include "../Piezas/Caballo.h"
-#include <iostream>
+#include <QApplication>
+#include "../GUI/MainWindow.h"
 
+int main(int argc, char *argv[])
+{
+    QApplication app(argc, argv);
 
-int main() {
-    Juego juego;
-    juego.iniciar();
+    MainWindow w;
+    w.show();
 
-    std::cout << "Juego de ajedrez iniciado!" << std::endl;
-    juego.mostrar();
-
-    // Aquí puedes agregar tu lógica de juego
-
-    return 0;
+    return app.exec();  // bucle de eventos de Qt
 }

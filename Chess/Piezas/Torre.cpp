@@ -1,12 +1,11 @@
 #include "Torre.h"
 
 #include <cmath>
-#include <bits/valarray_after.h>
 
 #include "Casilla.h"
 #include "../Src/Tablero.h"
 
-bool movimientoValido(Casilla origen, Casilla destino)
+bool Torre::movimientoValido(Casilla origen, Casilla destino) const
 {
 
     if (origen.getPieza() == nullptr) return false;

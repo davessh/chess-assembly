@@ -1,7 +1,7 @@
-#ifndef PIEZA_H
-#define PIEZA_H
+#ifndef OACPROYECTO_PIEZA_H
+#define OACPROYECTO_PIEZA_H
 
-
+#include <cmath>
 class Casilla;
 
 enum class TipoPieza {
@@ -32,7 +32,7 @@ protected:
 public:
     Pieza(TipoPieza tipo, Color colorJugador, int fila, int columna, bool puedeJugarse = true, bool seHaMovido = false);
 
-    bool movimientoValido(Casilla origen, Casilla destino) const;
+    virtual bool movimientoValido(Casilla origen, Casilla destino) const = 0;
 
     void setMovido(bool valor) { seHaMovido = valor; }
     void setColor(Color color) { this->color = color; }

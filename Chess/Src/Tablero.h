@@ -1,8 +1,6 @@
 #ifndef OACPROYECTO_TABLERO_H
 #define OACPROYECTO_TABLERO_H
 
-#include <array>
-#include <iostream>
 
 #include "../Piezas/Pieza.h"
 #include "../Piezas/Casilla.h"
@@ -10,7 +8,7 @@
 class Tablero {
 private:
 
-    Casilla tablero[8][8];
+    Casilla* tablero[8][8];
 
 public:
     Tablero();

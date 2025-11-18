@@ -29,26 +29,30 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c393a84f-e579-43a2-8110-cdc3f17f85d3" name="Changes" comment="Reorganizacion de la estructura de juego.">
-      <change afterPath="$PROJECT_DIR$/Chess/GUI/TableroInterfaz.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chess/Piezas/Alfil.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chess/Piezas/Caballo.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chess/Piezas/Casilla.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chess/Piezas/Peon.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chess/Piezas/Reina.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chess/Piezas/Rey.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chess/Piezas/Torre.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
+    <list default="true" id="c393a84f-e579-43a2-8110-cdc3f17f85d3" name="Changes" comment="Creacion de movimientos de parte de las fichas y reestructuracion de codigo.">
+      <change afterPath="$PROJECT_DIR$/Chess/GUI/MainWindow.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chess/GUI/MainWindow.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chess/GUI/_ui/imagenes/texturaMaderaClara.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chess/GUI/_ui/imagenes/texturaMaderaOscura.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chess/GUI/_ui/recursos.qrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chess/Piezas/Casilla.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chess/Piezas/Pieza.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/GUI/TableroInterfaz.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Alfil.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Alfil.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Alfil.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Alfil.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Caballo.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Caballo.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Piezas/Caballo.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Caballo.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Peon.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Peon.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Piezas/Peon.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Peon.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Piezas/Pieza.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Pieza.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Reina.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Reina.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Piezas/Reina.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Reina.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Rey.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Rey.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Piezas/Rey.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Rey.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Torre.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Torre.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Piezas/Torre.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Torre.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Src/Juego.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Src/Juego.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Src/Movimiento.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Src/Tablero.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Src/Tablero.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Src/Tablero.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Src/Tablero.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Src/main.cpp" afterDir="false" />
@@ -58,17 +62,11 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/OACPROYECTO.exe" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
     </list>
-    <list id="eefb2fa7-300b-41c2-851f-19b8e05709e4" name="Changes by GF76" comment="">
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Alfil.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Alfil.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Reina.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Reina.h" afterDir="false" />
-    </list>
+    <list id="eefb2fa7-300b-41c2-851f-19b8e05709e4" name="Changes by GF76" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,6 +80,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CMakeLists.txt" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -116,24 +115,30 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/davessh/chess-assembly.git&quot;,
-    &quot;accountId&quot;: &quot;e62c4243-289b-43ec-bc64-872f412034e5&quot;
+    &quot;accountId&quot;: &quot;c6edfa6a-ec92-4569-aff9-c5f6cd43b3c9&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Chess/Piezas/Piece.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Chess/Src/tableroLogica.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Chess/Src/tableroLogica.h" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/Chess/Piezas/Reina.h">
-      <ranges>
-        <range start1="0" end1="2" start2="0" end2="6" changelist="c393a84f-e579-43a2-8110-cdc3f17f85d3" />
-        <range start1="7" end1="14" start2="11" end2="11" changelist="c393a84f-e579-43a2-8110-cdc3f17f85d3" />
-        <range start1="15" end1="19" start2="12" end2="13" changelist="c393a84f-e579-43a2-8110-cdc3f17f85d3" />
-        <range start1="20" end1="24" start2="14" end2="15" changelist="c393a84f-e579-43a2-8110-cdc3f17f85d3" />
-        <range start1="25" end1="26" start2="16" end2="16" changelist="eefb2fa7-300b-41c2-851f-19b8e05709e4" />
-      </ranges>
-    </file>
+    <setting file="file://$PROJECT_DIR$/Chess/GUI/MainWindow.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Chess/GUI/MainWindow.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Chess/Piezas/Alfil.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Chess/Piezas/Alfil.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Chess/Piezas/Caballo.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Chess/Piezas/Caballo.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Chess/Piezas/Casilla.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Chess/Piezas/Peon.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Chess/Piezas/Peon.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Chess/Piezas/Pieza.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Chess/Piezas/Reina.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Chess/Piezas/Reina.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Chess/Piezas/Rey.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Chess/Piezas/Rey.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Chess/Piezas/Torre.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Chess/Piezas/Torre.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Chess/Src/Juego.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Chess/Src/Tablero.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Chess/Src/Tablero.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Chess/Src/main.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -145,6 +150,9 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="35RDWE1XTQqCs3NWeYQXENokdXA" />
+  <component name="ProjectStatusUIService">{
+  &quot;uiKindId&quot;: &quot;Widget&quot;
+}</component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -166,7 +174,9 @@
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -179,6 +189,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rogel\CLionProjects\chess-assembly_project\Chess\GUI" />
       <recent name="C:\Users\rogel\CLionProjects\chess-assembly_project\Chess\Src" />
       <recent name="C:\Users\rogel\CLionProjects\chess-assembly_project\Chess" />
       <recent name="C:\Users\rogel\CLionProjects\chess-assembly_project" />
@@ -186,15 +197,18 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.OACPROYECTO">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="OACPROYECTO" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
       <method v="2" />
     </configuration>
     <configuration name="OACPROYECTO" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OACPROYECTO" TARGET_NAME="OACPROYECTO" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OACPROYECTO" RUN_TARGET_NAME="OACPROYECTO">
+      <envs>
+        <env name="PATH" value="C:\Qt\6.10.0\mingw_64\bin" />
+      </envs>
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -231,6 +245,9 @@
       <workItem from="1763351201976" duration="31000" />
       <workItem from="1763351407515" duration="125000" />
       <workItem from="1763354473987" duration="306000" />
+      <workItem from="1763377958550" duration="1767000" />
+      <workItem from="1763407654955" duration="14279000" />
+      <workItem from="1763424612589" duration="5556000" />
     </task>
     <task id="LOCAL-00001" summary="prueba inicial">
       <option name="closed" value="true" />
@@ -256,7 +273,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763101414362</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Creacion de movimientos de parte de las fichas y reestructuracion de codigo.">
+      <option name="closed" value="true" />
+      <created>1763377910885</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1763377910885</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,7 +306,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="prueba inicial" />
     <MESSAGE value="Correccion de problemas al compilar." />
-    <option name="LAST_COMMIT_MESSAGE" value="Correccion de problemas al compilar." />
+    <MESSAGE value="Creacion de movimientos de parte de las fichas y reestructuracion de codigo." />
+    <option name="LAST_COMMIT_MESSAGE" value="Creacion de movimientos de parte de las fichas y reestructuracion de codigo." />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

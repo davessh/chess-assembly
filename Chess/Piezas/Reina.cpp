@@ -1,19 +1,17 @@
 // Reina.cpp
 #include "Reina.h"
+#include "Casilla.h"
 
-Reina::Reina(Color c, Posicion pos) : Pieza(TipoPieza::REINA, c, pos) {}
+bool Reina::movimientoValido(Casilla origen, Casilla destino) const {
+    if (origen.getPieza() == nullptr) return false;
 
-std::vector<Posicion> Reina::obtenerMovimientosPosibles(const Tablero& tablero) const {
-    std::vector<Posicion> movimientos;
-    // Aquí iría la lógica real para calcular los movimientos de la reina
-    return movimientos;
-}
+    bool sonIguales = (origen.getFila() == destino.getFila()) &&
+                      (origen.getColumna() == destino.getColumna());
+    if (sonIguales) return false;
 
-bool Reina::esMovimientoValido(const Posicion& destino, const Tablero& tablero) const {
-    // Aquí iría la lógica de validación de movimiento
-    return false;
-}
+    // La reina se mueve como torre o alfil
+    int difFila = abs(destino.getFila() - origen.getFila());
+    int difCol = abs(destino.getColumna() - origen.getColumna());
 
-char Reina::obtenerSimbolo() const {
-    return color == Color::BLANCO ? 'D' : 'd';
+    return (difFila == 0 || difCol == 0 || difFila == difCol);
 }

@@ -13,6 +13,7 @@ public:
         : Pieza(TipoPieza::PEON, colorJugador, fila, columna),
           alPaso(false), llegoAlFinal(false) {}
 
+    bool movimientoValido(Casilla origen, Casilla destino) const override;
 
 };
 

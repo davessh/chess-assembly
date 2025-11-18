@@ -1,6 +1,6 @@
 // Torre.hpp
-#ifndef TORRE_HPP
-#define TORRE_HPP
+#ifndef OACPROYECTO_TORRE_H
+#define OACPROYECTO_TORRE_H
 
 #include "Pieza.h"
 #include <vector>
@@ -10,6 +10,9 @@ class Torre : public Pieza {
 public:
     Torre(Color colorJugador, int fila, int columna)
         : Pieza(TipoPieza::TORRE, colorJugador, fila, columna) {}
+
+    bool movimientoValido(Casilla origen, Casilla destino) const override;
+
 };
 
 #endif // TORRE_HPP

@@ -1,3 +1,5 @@
 C:/Users/rogel/CLionProjects/chess-assembly_project/cmake-build-debug/CMakeFiles/OACPROYECTO.dir
 C:/Users/rogel/CLionProjects/chess-assembly_project/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/rogel/CLionProjects/chess-assembly_project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/rogel/CLionProjects/chess-assembly_project/cmake-build-debug/CMakeFiles/OACPROYECTO_autogen_timestamp_deps.dir
+C:/Users/rogel/CLionProjects/chess-assembly_project/cmake-build-debug/CMakeFiles/OACPROYECTO_autogen.dir

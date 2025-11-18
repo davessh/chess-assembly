@@ -1,13 +1,12 @@
 #include "Caballo.h"
 
 #include <cmath>
-#include <bits/valarray_after.h>
 
 #include "Pieza.h"
 #include "Casilla.h"
 
 
-bool movimientoValido(Casilla origen, Casilla destino)
+bool Caballo::movimientoValido(Casilla origen, Casilla destino) const
 {
 
     if (origen.getPieza() == nullptr) return false;

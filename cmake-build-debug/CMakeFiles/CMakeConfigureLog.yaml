@@ -452,3 +452,73 @@ events:
       Running the CXX compiler's linker: "C:/Program Files/JetBrains/CLion 2025.2.3/bin/mingw/bin/ld.exe" "-v"
       GNU ld (GNU Binutils) 2.40
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2025.2.3/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/Program Files/JetBrains/CLion 2025.2.3/bin/cmake/win/x64/share/cmake-4.0/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "C:/Program Files/JetBrains/CLion 2025.2.3/bin/cmake/win/x64/share/cmake-4.0/Modules/FindThreads.cmake:97 (check_c_source_compiles)"
+      - "C:/Program Files/JetBrains/CLion 2025.2.3/bin/cmake/win/x64/share/cmake-4.0/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "C:/Program Files/JetBrains/CLion 2025.2.3/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake:37 (_qt_internal_find_third_party_dependencies)"
+      - "C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:172 (include)"
+      - "CMakeLists.txt:12 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "C:/Users/rogel/CLionProjects/chess-assembly_project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ctqxjx"
+      binary: "C:/Users/rogel/CLionProjects/chess-assembly_project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ctqxjx"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6;C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6/3rdparty/kwin"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/rogel/CLionProjects/chess-assembly_project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ctqxjx'
+        
+        Run Build Command(s): C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/ninja/win/x64/ninja.exe -v cmTC_08f4d
+        [1/2] C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_08f4d.dir/src.c.obj -c C:/Users/rogel/CLionProjects/chess-assembly_project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ctqxjx/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   CMakeFiles/cmTC_08f4d.dir/src.c.obj -o cmTC_08f4d.exe -Wl,--out-implib,libcmTC_08f4d.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2025.2.3/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/Program Files/JetBrains/CLion 2025.2.3/bin/cmake/win/x64/share/cmake-4.0/Modules/CheckCXXSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6/FindWrapAtomic.cmake:36 (check_cxx_source_compiles)"
+      - "C:/Program Files/JetBrains/CLion 2025.2.3/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:35 (_qt_internal_find_third_party_dependencies)"
+      - "C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:42 (include)"
+      - "C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:233 (find_package)"
+      - "CMakeLists.txt:12 (find_package)"
+    checks:
+      - "Performing Test HAVE_STDATOMIC"
+    directories:
+      source: "C:/Users/rogel/CLionProjects/chess-assembly_project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ls45df"
+      binary: "C:/Users/rogel/CLionProjects/chess-assembly_project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ls45df"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6;C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6/3rdparty/kwin"
+    buildResult:
+      variable: "HAVE_STDATOMIC"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/rogel/CLionProjects/chess-assembly_project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ls45df'
+        
+        Run Build Command(s): C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/ninja/win/x64/ninja.exe -v cmTC_cfd0c
+        [1/2] C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\G__~1.EXE -DHAVE_STDATOMIC  -std=gnu++17 -o CMakeFiles/cmTC_cfd0c.dir/src.cxx.obj -c C:/Users/rogel/CLionProjects/chess-assembly_project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ls45df/src.cxx
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\G__~1.EXE   CMakeFiles/cmTC_cfd0c.dir/src.cxx.obj -o cmTC_cfd0c.exe -Wl,--out-implib,libcmTC_cfd0c.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        
+      exitCode: 0
+...
