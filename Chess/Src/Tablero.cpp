@@ -54,3 +54,9 @@ void Tablero::inicializar() {
     tablero[7][6]->setPieza(new Caballo(Color::BLANCO, 7, 6));
     tablero[7][7]->setPieza(new Torre(Color::BLANCO, 7, 7));
 }
+
+
+Casilla* Tablero::getCasilla(int fila, int columna) const
+{
+    return tablero[fila][columna];
+}

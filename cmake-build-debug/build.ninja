@@ -157,6 +157,15 @@ build CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Casilla.cpp.obj: CXX_COMPILER__OAC
   OBJECT_DIR = CMakeFiles\OACPROYECTO.dir
   OBJECT_FILE_DIR = CMakeFiles\OACPROYECTO.dir\Chess\Piezas
 
+build CMakeFiles/OACPROYECTO.dir/Chess/Src/Juego.cpp.obj: CXX_COMPILER__OACPROYECTO_unscanned_Debug C$:/Users/rogel/CLionProjects/chess-assembly_project/Chess/Src/Juego.cpp || cmake_object_order_depends_target_OACPROYECTO
+  CONFIG = Debug
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\OACPROYECTO.dir\Chess\Src\Juego.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/rogel/CLionProjects/chess-assembly_project/cmake-build-debug/OACPROYECTO_autogen/include -isystem C:/Qt/6.10.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.10.0/mingw_64/include -isystem C:/Qt/6.10.0/mingw_64/include/QtCore -isystem C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.10.0/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\OACPROYECTO.dir
+  OBJECT_FILE_DIR = CMakeFiles\OACPROYECTO.dir\Chess\Src
+
 build CMakeFiles/OACPROYECTO.dir/OACPROYECTO_autogen/YSNAXMTRJI/qrc_recursos.cpp.obj: CXX_COMPILER__OACPROYECTO_unscanned_Debug C$:/Users/rogel/CLionProjects/chess-assembly_project/cmake-build-debug/OACPROYECTO_autogen/YSNAXMTRJI/qrc_recursos.cpp || cmake_object_order_depends_target_OACPROYECTO
   CONFIG = Debug
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
@@ -174,7 +183,7 @@ build CMakeFiles/OACPROYECTO.dir/OACPROYECTO_autogen/YSNAXMTRJI/qrc_recursos.cpp
 #############################################
 # Link the executable OACPROYECTO.exe
 
-build OACPROYECTO.exe: CXX_EXECUTABLE_LINKER__OACPROYECTO_Debug CMakeFiles/OACPROYECTO.dir/OACPROYECTO_autogen/mocs_compilation.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Src/main.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Src/Tablero.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Alfil.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Torre.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Rey.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Reina.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Caballo.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Peon.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/GUI/MainWindow.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Pieza.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Casilla.cpp.obj CMakeFiles/OACPROYECTO.dir/OACPROYECTO_autogen/YSNAXMTRJI/qrc_recursos.cpp.obj | C$:/Qt/6.10.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Core.a || OACPROYECTO_autogen OACPROYECTO_autogen_timestamp_deps
+build OACPROYECTO.exe: CXX_EXECUTABLE_LINKER__OACPROYECTO_Debug CMakeFiles/OACPROYECTO.dir/OACPROYECTO_autogen/mocs_compilation.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Src/main.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Src/Tablero.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Alfil.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Torre.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Rey.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Reina.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Caballo.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Peon.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/GUI/MainWindow.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Pieza.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Casilla.cpp.obj CMakeFiles/OACPROYECTO.dir/Chess/Src/Juego.cpp.obj CMakeFiles/OACPROYECTO.dir/OACPROYECTO_autogen/YSNAXMTRJI/qrc_recursos.cpp.obj | C$:/Qt/6.10.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Core.a || OACPROYECTO_autogen OACPROYECTO_autogen_timestamp_deps
   CONFIG = Debug
   FLAGS = -g
   LINK_LIBRARIES = C:/Qt/6.10.0/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.10.0/mingw_64/lib/libQt6Gui.a  C:/Qt/6.10.0/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

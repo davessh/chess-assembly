@@ -12,7 +12,7 @@ public:
     Alfil(Color colorJugador, int fila, int columna)
         : Pieza(TipoPieza::ALFIL, colorJugador, fila, columna) {}
 
-    bool movimientoValido(Casilla origen, Casilla destino) const override;
+    bool movimientoValido(Casilla origen, Casilla destino, Tablero& tablero);
 };
 
 #endif

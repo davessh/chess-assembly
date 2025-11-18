@@ -1,6 +1,9 @@
 #ifndef OACPROYECTO_CASILLA_H
 #define OACPROYECTO_CASILLA_H
-#include "Pieza.h"
+
+// QUITAR: #include "Pieza.h"
+// y sustituirlo por una forward declaration:
+class Pieza;
 
 class Casilla
 {
@@ -23,6 +26,6 @@ public:
     int getFila();
     int getColumna();
     Pieza* getPieza();
-
 };
+
 #endif //OACPROYECTO_CASILLA_H

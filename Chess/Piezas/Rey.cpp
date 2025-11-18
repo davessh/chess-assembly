@@ -2,7 +2,7 @@
 #include "Rey.h"
 #include "Casilla.h"
 
-bool Rey::movimientoValido(Casilla origen, Casilla destino) const {
+    bool Rey::movimientoValido(Casilla origen, Casilla destino, Tablero& tablero) {
     if (origen.getPieza() == nullptr) return false;
 
     bool sonIguales = (origen.getFila() == destino.getFila()) &&

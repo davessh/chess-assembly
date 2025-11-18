@@ -2,7 +2,7 @@
 #include "Peon.h"
 #include "Casilla.h"
 
-bool Peon::movimientoValido(Casilla origen, Casilla destino) const {
+    bool Peon::movimientoValido(Casilla origen, Casilla destino, Tablero& tablero) {
     // Implementación básica del movimiento del peón
     if (origen.getPieza() == nullptr) return false;
     

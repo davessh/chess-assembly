@@ -1,6 +1,6 @@
 #include "Alfil.h"
 
-bool Alfil::movimientoValido(Casilla origen, Casilla destino) const {
+    bool Alfil::movimientoValido(Casilla origen, Casilla destino, Tablero& tablero) {
     if (origen.getPieza() == nullptr) return false;
 
     bool sonIguales = (origen.getFila() == destino.getFila()) &&

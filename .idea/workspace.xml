@@ -29,23 +29,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c393a84f-e579-43a2-8110-cdc3f17f85d3" name="Changes" comment="Creacion de movimientos de parte de las fichas y reestructuracion de codigo.">
-      <change afterPath="$PROJECT_DIR$/Chess/GUI/MainWindow.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chess/GUI/MainWindow.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chess/GUI/_ui/imagenes/texturaMaderaClara.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chess/GUI/_ui/imagenes/texturaMaderaOscura.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chess/GUI/_ui/recursos.qrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chess/Piezas/Casilla.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chess/Piezas/Pieza.cpp" afterDir="false" />
+    <list default="true" id="c393a84f-e579-43a2-8110-cdc3f17f85d3" name="Changes" comment="Base grafica creada.">
+      <change afterPath="$PROJECT_DIR$/Chess/Src/Juego.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/GUI/TableroInterfaz.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Piezas/Alfil.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Alfil.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Piezas/Alfil.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Alfil.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Piezas/Caballo.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Caballo.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Piezas/Caballo.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Caballo.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Casilla.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Casilla.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Piezas/Peon.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Peon.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Piezas/Peon.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Peon.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Pieza.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Pieza.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Piezas/Pieza.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Pieza.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Piezas/Reina.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Reina.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Piezas/Reina.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Reina.h" afterDir="false" />
@@ -53,14 +48,12 @@
       <change beforePath="$PROJECT_DIR$/Chess/Piezas/Rey.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Rey.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Piezas/Torre.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Torre.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Piezas/Torre.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Torre.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/Src/Juego.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Src/Juego.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Src/Tablero.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Src/Tablero.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Src/Tablero.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Src/Tablero.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Src/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
@@ -247,7 +240,7 @@
       <workItem from="1763354473987" duration="306000" />
       <workItem from="1763377958550" duration="1767000" />
       <workItem from="1763407654955" duration="14279000" />
-      <workItem from="1763424612589" duration="5556000" />
+      <workItem from="1763424612589" duration="8147000" />
     </task>
     <task id="LOCAL-00001" summary="prueba inicial">
       <option name="closed" value="true" />
@@ -281,7 +274,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763377910885</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Base grafica creada.">
+      <option name="closed" value="true" />
+      <created>1763430356243</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1763430356243</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,7 +308,8 @@
     <MESSAGE value="prueba inicial" />
     <MESSAGE value="Correccion de problemas al compilar." />
     <MESSAGE value="Creacion de movimientos de parte de las fichas y reestructuracion de codigo." />
-    <option name="LAST_COMMIT_MESSAGE" value="Creacion de movimientos de parte de las fichas y reestructuracion de codigo." />
+    <MESSAGE value="Base grafica creada." />
+    <option name="LAST_COMMIT_MESSAGE" value="Base grafica creada." />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

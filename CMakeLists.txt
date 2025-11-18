@@ -40,6 +40,7 @@ add_executable(OACPROYECTO
         Chess/GUI/Tablero.ui
         Chess/Piezas/Pieza.cpp
         Chess/Piezas/Casilla.cpp
+        Chess/Src/Juego.cpp
 )
 
 target_link_libraries(OACPROYECTO PRIVATE Qt6::Widgets)

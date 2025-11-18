@@ -12,7 +12,13 @@ private:
 
 public:
     Tablero();
+
  void inicializar();
+
+    Casilla* getCasilla(int fila, int columna) const;
+
+
 };
+
 
 #endif

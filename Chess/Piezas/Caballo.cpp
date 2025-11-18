@@ -6,7 +6,7 @@
 #include "Casilla.h"
 
 
-bool Caballo::movimientoValido(Casilla origen, Casilla destino) const
+    bool Caballo::movimientoValido(Casilla origen, Casilla destino, Tablero& tablero)
 {
 
     if (origen.getPieza() == nullptr) return false;
