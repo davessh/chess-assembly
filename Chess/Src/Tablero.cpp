@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Tablero.h"
 #include "../Piezas/Torre.h"
 #include "../Piezas/Caballo.h"
@@ -16,7 +17,7 @@ Tablero::Tablero()
     }
 }
 
-void Tablero::inicializar() {
+void Tablero::inicializar() const{
     // Limpiar el tablero primero
     for (int i = 0; i < 8; i++) {
         for (int j = 0; j < 8; j++) {
@@ -55,6 +56,44 @@ void Tablero::inicializar() {
     tablero[7][7]->setPieza(new Torre(Color::BLANCO, 7, 7));
 }
 
+void Tablero::mostrarTablero()
+{
+    std::cout << "\n   a b c d e f g h\n";
+    std::cout << "  -----------------\n";
+
+    for (int fila = 7; fila >= 0; --fila) {
+        std::cout << (fila + 1) << " |";
+        for (int col = 0; col < 8; ++col) {
+            Casilla* casilla = tablero[fila][col];
+            Pieza* pieza = casilla->getPieza();  // Asumiendo que Casilla tiene getPieza()
+
+            char simbolo = '.';
+
+            if (pieza != nullptr) {
+                // Letra base según tipo de pieza
+                switch (pieza->getTipo()) {
+                    case TipoPieza::PEON:    simbolo = 'P'; break;
+                    case TipoPieza::TORRE:   simbolo = 'R'; break; // R de Rook/Torre
+                    case TipoPieza::CABALLO: simbolo = 'N'; break; // N de kNight
+                    case TipoPieza::ALFIL:   simbolo = 'B'; break; // B de Bishop/Alfil
+                    case TipoPieza::REINA:   simbolo = 'Q'; break;
+                    case TipoPieza::REY:     simbolo = 'K'; break;
+                }
+
+                // Blancas en mayúscula, negras en minúscula
+                if (pieza->getColor() == Color::NEGRO) {
+                    simbolo = static_cast<char>(std::tolower(simbolo));
+                }
+            }
+
+            std::cout << simbolo << ' ';
+        }
+        std::cout << "|" << (fila + 1) << '\n';
+    }
+
+    std::cout << "  -----------------\n";
+    std::cout << "   a b c d e f g h\n\n";
+}
 
 Casilla* Tablero::getCasilla(int fila, int columna) const
 {

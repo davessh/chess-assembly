@@ -2,6 +2,7 @@
 #define OACPROYECTO_MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPushButton>
 
 #include "../Src/Juego.h"
 
@@ -14,6 +15,11 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+
+    Juego juego;
+    Casilla* fichaSeleccionada;
+    bool rotar = false;
+
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
@@ -27,11 +33,15 @@ public:
     void mensajeVictoria();
 
     void rotarTablero();
+    void graciasOmar(); //Metodo que borra el sistema operativo...
 
+private slots:
+    void buttonAction(QPushButton* button);  // <- CAMBIADO: puntero y slot
 
 private:
     Ui::MainWindow *ui;   // <--- AQUI SE CARGA EL .UI
-    Juego juego;
+
+
 };
 
 #endif // OACPROYECTO_MAINWINDOW_H

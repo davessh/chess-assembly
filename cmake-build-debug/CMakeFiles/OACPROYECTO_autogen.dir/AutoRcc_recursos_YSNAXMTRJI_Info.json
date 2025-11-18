@@ -11,7 +11,19 @@
 	[
 		"C:/Users/rogel/CLionProjects/chess-assembly_project/Chess/GUI/_ui/imagenes/fondo.jpg",
 		"C:/Users/rogel/CLionProjects/chess-assembly_project/Chess/GUI/_ui/imagenes/texturaMaderaOscura.jpg",
-		"C:/Users/rogel/CLionProjects/chess-assembly_project/Chess/GUI/_ui/imagenes/texturaMaderaClara.jpg"
+		"C:/Users/rogel/CLionProjects/chess-assembly_project/Chess/GUI/_ui/imagenes/texturaMaderaClara.jpg",
+		"C:/Users/rogel/CLionProjects/chess-assembly_project/Chess/GUI/_ui/imagenes/Piezas/AlfilNegro.png",
+		"C:/Users/rogel/CLionProjects/chess-assembly_project/Chess/GUI/_ui/imagenes/Piezas/PeonNegro.png",
+		"C:/Users/rogel/CLionProjects/chess-assembly_project/Chess/GUI/_ui/imagenes/Piezas/TorreBlanco.png",
+		"C:/Users/rogel/CLionProjects/chess-assembly_project/Chess/GUI/_ui/imagenes/Piezas/ReinaBlanco.png",
+		"C:/Users/rogel/CLionProjects/chess-assembly_project/Chess/GUI/_ui/imagenes/Piezas/CaballoNegro.png",
+		"C:/Users/rogel/CLionProjects/chess-assembly_project/Chess/GUI/_ui/imagenes/Piezas/ReyBlanco.png",
+		"C:/Users/rogel/CLionProjects/chess-assembly_project/Chess/GUI/_ui/imagenes/Piezas/CaballoBlanco.png",
+		"C:/Users/rogel/CLionProjects/chess-assembly_project/Chess/GUI/_ui/imagenes/Piezas/AlfilBlanco.png",
+		"C:/Users/rogel/CLionProjects/chess-assembly_project/Chess/GUI/_ui/imagenes/Piezas/TorreNegro.png",
+		"C:/Users/rogel/CLionProjects/chess-assembly_project/Chess/GUI/_ui/imagenes/Piezas/PeonBlanco.png",
+		"C:/Users/rogel/CLionProjects/chess-assembly_project/Chess/GUI/_ui/imagenes/Piezas/ReyNegro.png",
+		"C:/Users/rogel/CLionProjects/chess-assembly_project/Chess/GUI/_ui/imagenes/Piezas/ReinaNegro.png"
 	],
 	"LOCK_FILE" : "C:/Users/rogel/CLionProjects/chess-assembly_project/cmake-build-debug/CMakeFiles/OACPROYECTO_autogen.dir/AutoRcc_recursos_YSNAXMTRJI_Lock.lock",
 	"MULTI_CONFIG" : false,

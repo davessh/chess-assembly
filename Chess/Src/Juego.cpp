@@ -8,6 +8,7 @@ Juego::Juego()
 void Juego::iniciar()
 {
     tablero.inicializar();
+    tablero.mostrarTablero();
     jugadorActual = Color::BLANCO;
     estado = EstadoJuego::JUGANDO;
 }

@@ -367,7 +367,10 @@ C:/Users/rogel/CLionProjects/chess-assembly_project/cmake-build-debug/OACPROYECT
   C:/Qt/6.10.0/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QMainWindow \
+  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QPushButton \
+  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qabstractbutton.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qmainwindow.h \
+  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qpushbutton.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qtabwidget.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qtwidgets-config.h \

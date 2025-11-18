@@ -13,7 +13,8 @@ private:
 public:
     Tablero();
 
- void inicializar();
+ void inicializar() const;
+    void mostrarTablero();
 
     Casilla* getCasilla(int fila, int columna) const;
 
