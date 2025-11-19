@@ -6,7 +6,6 @@
 #include "../Src/Tablero.h"
 
 class Torre : public Pieza {
-
 public:
     Torre(Color colorJugador, int fila, int columna)
         : Pieza(TipoPieza::TORRE, colorJugador, fila, columna) {}

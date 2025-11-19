@@ -8,6 +8,7 @@ class Peon : public Pieza {
 private:
     bool alPaso;
     bool llegoAlFinal;
+    bool esPrimerMovimiento = true;
 public:
     Peon(Color colorJugador, int fila, int columna)
         : Pieza(TipoPieza::PEON, colorJugador, fila, columna),
