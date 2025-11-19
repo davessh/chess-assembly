@@ -160,7 +160,6 @@ for (int fila = 0; fila < 8; fila++) {
 void MainWindow::buttonAction(QPushButton* button)
 {
     if (!button) return;
-    mensajeSeleccionarFicha(Color::BLANCO);
     int fila = button->property("fila").toInt();
     int columna = button->property("columna").toInt();
 
@@ -176,14 +175,12 @@ void MainWindow::buttonAction(QPushButton* button)
             juego.obtenerJugadorActual() == casillaClickeada->getPieza()->getColor())
         {
             fichaSeleccionada = casillaClickeada;
-            fijarHover(button); // Iluminar la nueva selección
+            fijarHover(button);
             qDebug() << "Ficha seleccionada en" << fila << columna;
         }
     }
-    // --- CASO 2: YA HAY ALGO SELECCIONADO (INTENTO MOVER O CAMBIAR) ---
     else
     {
-        // A) ¿Hizo click en la misma pieza? -> DESELECCIONAR
         if (fichaSeleccionada == casillaClickeada) {
             restaurarHover(button); // Apagar luz
             fichaSeleccionada = nullptr;
@@ -191,44 +188,45 @@ void MainWindow::buttonAction(QPushButton* button)
             return;
         }
 
-        // B) ¿Hizo click en otra pieza de SU MISMO color? -> CAMBIAR SELECCIÓN
         if (casillaClickeada->getPieza() != nullptr &&
             casillaClickeada->getPieza()->getColor() == juego.obtenerJugadorActual())
         {
-            // 1. Apagar la anterior
             QPushButton* btnAnterior = obtenerCasillaGrafica(fichaSeleccionada->getFila(), fichaSeleccionada->getColumna());
             if(btnAnterior) restaurarHover(btnAnterior);
 
-            // 2. Seleccionar la nueva
             fichaSeleccionada = casillaClickeada;
             fijarHover(button); // Iluminar la nueva
             qDebug() << "Cambio de ficha seleccionada";
             return;
         }
 
-        // C) INTENTO DE MOVIMIENTO (Click en casilla vacía o enemiga)
         if (juego.realizarMovimiento(fichaSeleccionada, casillaClickeada))
         {
-            // 1. El movimiento fue válido en la lógica.
-
-            // 2. Apagar el brillo de la casilla de origen (donde estaba la pieza antes)
-            // NOTA: Como la pieza ya se movió en la lógica, usamos las coordenadas viejas guardadas
-            // o simplemente restauramos el botón anterior antes de perder la referencia.
             QPushButton* btnOrigen = obtenerCasillaGrafica(fichaSeleccionada->getFila(), fichaSeleccionada->getColumna());
             if(btnOrigen) restaurarHover(btnOrigen);
 
-            // 3. Limpiar selección
             fichaSeleccionada = nullptr;
 
-            // 4. Actualizar gráficos
             actualizar();
+            if (juego.obtenerEstadoJuego() == EstadoJuego::JAQUE_MATE)
+            {
+                Color ganador;
+                if (juego.obtenerJugadorActual() == Color::BLANCO)
+                {
+                    ganador = Color::NEGRO;
+                }else
+                {
+                    ganador = Color::BLANCO;
+                }
+                mensajeVictoria(ganador);
+            }
             qDebug() << "Movimiento exitoso";
         }
         else
         {
+
             qDebug() << "Movimiento inválido";
-            // Opcional: ¿Quieres que se deseleccione si falla?
-            // Si no, no haces nada y el usuario puede intentar otra casilla.
+
         }
     }
 }
@@ -281,14 +279,31 @@ void MainWindow::desmarcarJacke(QPushButton* button) {
 
 void MainWindow::actualizar()
 {
-    // Tablero lógico (modelo)
+    Casilla* casillaRey = nullptr;
+
+    mostrarTurnoActual(juego.obtenerJugadorActual());
+
     Tablero *tablero = juego.obtenerTablero();
 
-    // Layout del tablero gráfico
     QGridLayout* gridTablero = ui->tablero;
-    if (!gridTablero) return;
+    if (!gridTablero){ return;}
 
 
+
+    for (int f = 0; f < 8; ++f) {
+        for (int c = 0; c < 8; ++c) {
+            QLayoutItem* item = gridTablero->itemAtPosition(f, c);
+            QPushButton* btn = item ? qobject_cast<QPushButton*>(item->widget()) : nullptr;
+            if (btn) {
+                desmarcarJacke(btn);
+            }
+        }
+    }
+
+    if (juego.obtenerEstadoJuego() == EstadoJuego::JAQUE)
+    {
+        casillaRey = tablero->buscarRey(juego.obtenerJugadorActual());
+    }
 
     for (int fila = 0; fila < 8; ++fila) {
         for (int col = 0; col < 8; ++col) {
@@ -341,13 +356,19 @@ void MainWindow::actualizar()
                         ? ":/imagenes/Piezas/ReinaBlanco.png"
                         : ":/imagenes/Piezas/ReinaNegro.png";
                 break;
-                case TipoPieza::REY:
+            case TipoPieza::REY:
+                if (casillaRey != nullptr &&
+                    casillaRey->getFila() == fila &&
+                    casillaRey->getColumna() == col)
+                {
+                    marcarJacke(boton);
+                }
+
                 rutaIcono = (pieza->getColor() == Color::BLANCO)
                         ? ":/imagenes/Piezas/ReyBlanco.png"
                         : ":/imagenes/Piezas/ReyNegro.png";
                 break;
                     // ...
-                    break;
             }
 
             // 5) Aplicar icono al botón
@@ -471,10 +492,172 @@ TipoPieza MainWindow::mensajeSeleccionarFicha(Color colorPieza)
     return piezaSeleccionada;
 }
 
-void MainWindow::mensajeVictoria()
-{
 
+
+void MainWindow::mensajeVictoria(Color ganador)
+{
+    QDialog dialog(this);
+    dialog.setWindowTitle("¡Jaque Mate!");
+    dialog.setModal(true);
+    dialog.setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::MSWindowsFixedSizeDialogHint);
+
+    // Color de fondo según el ganador
+    QString colorFondo = (ganador == Color::BLANCO) ? "#F5F5DC" : "#2C2C2C";
+    QString colorTexto = (ganador == Color::BLANCO) ? "#000000" : "#FFFFFF";
+    QString colorBoton = (ganador == Color::BLANCO) ? "#FFD700" : "#C0C0C0";
+
+    dialog.setStyleSheet(QString("QDialog { background-color: %1; }").arg(colorFondo));
+
+    QVBoxLayout *mainLayout = new QVBoxLayout(&dialog);
+    mainLayout->setSpacing(20);
+    mainLayout->setContentsMargins(30, 30, 30, 30);
+
+    // Título
+    QLabel *titulo = new QLabel("¡JAQUE MATE!");
+    titulo->setStyleSheet(QString(
+        "color: %1; "
+        "font-size: 28pt; "
+        "font-weight: bold; "
+        "font-family: 'Arial Black';"
+    ).arg(colorTexto));
+    titulo->setAlignment(Qt::AlignCenter);
+    mainLayout->addWidget(titulo);
+
+    // Imagen del rey ganador
+    QLabel *imagenRey = new QLabel();
+    imagenRey->setFixedSize(120, 120);
+    imagenRey->setScaledContents(true);
+    imagenRey->setAlignment(Qt::AlignCenter);
+
+    QString rutaRey = (ganador == Color::BLANCO)
+        ? ":/imagenes/Piezas/ReyBlanco.png"
+        : ":/imagenes/Piezas/ReyNegro.png";
+
+    QPixmap pixmapRey(rutaRey);
+    if (!pixmapRey.isNull()) {
+        imagenRey->setPixmap(pixmapRey);
+    }
+    mainLayout->addWidget(imagenRey, 0, Qt::AlignCenter);
+
+    // Mensaje de victoria
+    QString textoGanador = (ganador == Color::BLANCO) ? "BLANCAS" : "NEGRAS";
+    QLabel *mensaje = new QLabel(QString("¡Las %1 han ganado!").arg(textoGanador));
+    mensaje->setStyleSheet(QString(
+        "color: %1; "
+        "font-size: 18pt; "
+        "font-weight: bold;"
+    ).arg(colorTexto));
+    mensaje->setAlignment(Qt::AlignCenter);
+    mainLayout->addWidget(mensaje);
+
+    // Botones
+    QHBoxLayout *botonesLayout = new QHBoxLayout();
+    botonesLayout->setSpacing(15);
+
+    QPushButton *btnNuevaPartida = new QPushButton("Nueva Partida");
+    QPushButton *btnSalir = new QPushButton("Salir");
+
+    QString estiloBoton = QString(
+        "QPushButton { "
+        "   background-color: %1; "
+        "   color: %2; "
+        "   border: 3px solid %2; "
+        "   border-radius: 8px; "
+        "   padding: 12px 24px; "
+        "   font-size: 14pt; "
+        "   font-weight: bold; "
+        "}"
+        "QPushButton:hover { "
+        "   background-color: %2; "
+        "   color: %1; "
+        "   border: 3px solid %1; "
+        "}"
+    ).arg(colorBoton).arg(colorTexto);
+
+    btnNuevaPartida->setStyleSheet(estiloBoton);
+    btnSalir->setStyleSheet(estiloBoton);
+
+    connect(btnNuevaPartida, &QPushButton::clicked, [this, &dialog]() {
+        dialog.accept();
+        reiniciar();
+    });
+
+    connect(btnSalir, &QPushButton::clicked, [&dialog]() {
+        dialog.accept();
+        QApplication::quit();
+    });
+
+    botonesLayout->addWidget(btnNuevaPartida);
+    botonesLayout->addWidget(btnSalir);
+    mainLayout->addLayout(botonesLayout);
+
+    dialog.setFixedSize(400, 400);
+    dialog.exec();
 }
+
+void MainWindow::mostrarTurnoActual(Color turno)
+{
+    QString fuente = "Garamond";
+    QString size = "30px";
+
+    QString cafeOscuro = "#5A3E2B";   // combina con cuadros oscuros
+    QString cafeClaro  = "#D7B892";   // combina con cuadros claros
+
+    QString bordeColor = (turno == Color::BLANCO) ? cafeOscuro : cafeClaro;
+
+    QString estiloBlancoActivo = QString(
+        "QLabel { "
+        "  background-color: %3; "
+        "  color: black; "
+        "  border: 4px solid %4; "
+        "  font-family: '%1'; "
+        "  font-size: %2; "
+        "  font-weight: bold; "
+        "  qproperty-alignment: AlignCenter; "
+        "}"
+    ).arg(fuente).arg(size).arg(cafeClaro).arg(bordeColor);
+
+    QString estiloNegroActivo = QString(
+        "QLabel { "
+        "  background-color: %3; "
+        "  color: white; "
+        "  border: 4px solid %4; "
+        "  font-family: '%1'; "
+        "  font-size: %2; "
+        "  font-weight: bold; "
+        "  qproperty-alignment: AlignCenter; "
+        "}"
+    ).arg(fuente).arg(size).arg(cafeOscuro).arg(bordeColor);
+
+    QString estiloInactivo = QString(
+        "QLabel { "
+        "  background-color: transparent; "
+        "  border: 4px solid %1; "
+        "}"
+    ).arg(bordeColor);
+
+    QString textoVerticalBlanco = "B\nL\nA\nN\nC\nO";
+    QString textoVerticalNegro = "N\nE\nG\nR\nO";
+
+    if (turno == Color::BLANCO)
+    {
+        ui->labelWhite->setText(textoVerticalBlanco);
+        ui->labelWhite->setStyleSheet(estiloBlancoActivo);
+
+        ui->labelBlack->setText("");
+        ui->labelBlack->setStyleSheet(estiloInactivo);
+    }
+    else
+    {
+        ui->labelBlack->setText(textoVerticalNegro);
+        ui->labelBlack->setStyleSheet(estiloNegroActivo);
+
+        ui->labelWhite->setText("");
+        ui->labelWhite->setStyleSheet(estiloInactivo);
+    }
+}
+
+
 
 void MainWindow::graciasOmar()
 {

@@ -21,30 +21,76 @@ void Juego::reiniciar()
 bool Juego::realizarMovimiento(Casilla* origen, Casilla* destino)
 {
     Pieza* pieza = origen->getPieza();
+
     if (pieza == nullptr) return false;
-    if (pieza->movimientoValido(*origen, *destino, &tablero) && estado != EstadoJuego::JAQUE)
-    {
-        //Agregar si se hace un movimiento que genera jacke no se pueda realizar
+    if (pieza->getColor() != jugadorActual) return false; // NUEVO: verificar turno
 
-        tablero.setCasilla(destino->getFila(), destino->getColumna(), pieza);
-        tablero.setCasilla(origen->getFila(), origen->getColumna(), nullptr);
-        if (verificarJacke())
+    Pieza* piezaDestino = destino->getPieza();
+    if (piezaDestino != nullptr && piezaDestino->getColor() == jugadorActual) {
+        return false; // NUEVO
+    }
+
+    if (estado != EstadoJuego::JAQUE && estado != EstadoJuego::JAQUE_MATE)
+    {
+        if (pieza->movimientoValido(*origen, *destino, &tablero) && !generaJacke(origen, destino))
         {
-            estado = EstadoJuego::JAQUE;
-        }
-        cambiarJugador();
-        return true;
-    }
-    else if (estado == EstadoJuego::JAQUE && verificarJacke())
-    {
-        //Si se mueve se puede mover una ficha y quita el hacke, no hay hacke y te permite buscar la jugada por tu cuenta
-    }
-    // Aquí iría la lógica real del movimiento:
-    // - seleccionar origen/destino
+            tablero.setCasilla(destino->getFila(), destino->getColumna(), pieza);
+            tablero.setCasilla(origen->getFila(), origen->getColumna(), nullptr);
 
-    // - validar movimiento según la pieza
-    // - actualizar tablero, etc.
-    // De momento devolvemos false como placeholder.
+            if (!pieza->getSeHaMovido()) {
+                pieza->setMovido(true);
+            }
+
+            cambiarJugador();
+
+            if (verificarJacke()) {
+                if (esJaqueMate(jugadorActual)) {
+                    estado = EstadoJuego::JAQUE_MATE;
+                } else {
+                    estado = EstadoJuego::JAQUE;
+                }
+            }
+
+            return true;
+        }
+    }
+    else if (estado == EstadoJuego::JAQUE)
+    {
+        if (pieza->movimientoValido(*origen, *destino, &tablero) && !generaJacke(origen, destino))
+        {
+            tablero.setCasilla(destino->getFila(), destino->getColumna(), pieza);
+            tablero.setCasilla(origen->getFila(), origen->getColumna(), nullptr);
+
+            if (!pieza->getSeHaMovido()) {
+                pieza->setMovido(true);
+            }
+
+            cambiarJugador();
+
+            if (verificarJacke()) {
+                if (esJaqueMate(jugadorActual)) {
+                    estado = EstadoJuego::JAQUE_MATE;
+                } else {
+                    estado = EstadoJuego::JAQUE;
+                }
+            } else {
+                estado = EstadoJuego::JUGANDO; // Ya no hay jaque
+            }
+
+            return true;
+        }
+        else
+        {
+            if (esJaqueMate(jugadorActual)) {
+                estado = EstadoJuego::JAQUE_MATE;
+            }
+        }
+    }
+    else if (estado == EstadoJuego::JAQUE_MATE)
+    {
+        return false; // El juego ya terminó
+    }
+
     return false;
 }
 
@@ -90,20 +136,52 @@ Color Juego::obtenerJugadorActual()
 
 
 
-bool Juego::esJaqueMate(Color /*color*/)
+bool Juego::esJaqueMate(Color turno)
 {
+    if (!verificarJacke()) {
+        return false; // No está en jaque, no puede ser mate
+    }
     for (int i = 0; i < 8; i++)
     {
         for (int j = 0; j < 8; j++)
         {
             Pieza* pieza = tablero.getCasilla(i, j)->getPieza();
-            if (pieza != nullptr && pieza->getColor() == jugadorActual)
+            Casilla* casillaPieza = tablero.getCasilla(i, j);
+            if (!pieza || pieza->getColor() != turno) continue;
+
+            for (int movi = 0; movi < 8; movi++)
             {
-                return false;
+                for (int movj = 0; movj < 8; movj++)
+                {
+                    Casilla* casilla = tablero.getCasilla(movi, movj);
+                    if (pieza->movimientoValido(*casillaPieza, *casilla, &tablero)
+                    && !generaJacke(casillaPieza, casilla))
+                    {
+                        return false; // Encontramos un movimiento legal que salva al rey
+                    }
+                }
             }
+
         }
     }
     return true;
+}
+
+bool Juego::generaJacke(Casilla* origen, Casilla* destino)
+{
+    Pieza* piezaCapturada = destino->getPieza();
+    Pieza* piezaMovida = origen->getPieza();
+
+    tablero.setCasilla(destino->getFila(), destino->getColumna(), origen->getPieza());
+    tablero.setCasilla(origen->getFila(), origen->getColumna(), nullptr);
+
+    Casilla* casillaRey = tablero.buscarRey(jugadorActual);
+    bool enJaque = hayJacke(*casillaRey);
+
+    tablero.setCasilla(destino->getFila(), destino->getColumna(), piezaCapturada);
+    tablero.setCasilla(origen->getFila(), origen->getColumna(), piezaMovida);
+
+    return enJaque;
 }
 
 bool Juego::esAhogado(Color /*color*/)

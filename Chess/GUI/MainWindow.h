@@ -35,7 +35,10 @@ public:
 
     TipoPieza mensajeSeleccionarFicha(Color colorPieza);
 
-    void mensajeVictoria();
+
+    void mensajeVictoria(Color ganador);
+
+    void mostrarTurnoActual(Color turno);
 
     void graciasOmar(); //Metodo que borra el sistema operativo...
 

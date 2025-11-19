@@ -29,45 +29,27 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c393a84f-e579-43a2-8110-cdc3f17f85d3" name="Changes" comment="Correccion de archivos por problemas al instalar msvc en Qt.">
+    <list default="true" id="c393a84f-e579-43a2-8110-cdc3f17f85d3" name="Changes" comment="Implementacion de ciertos movimientos de ficha en tablero.&#10;Implementacion de mensaje de seleccion al llegar al final del tablero con el peon.&#10;Logica para saber si hay jacke y base simple para movimientos sin revisar muchas cosas.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/GUI/MainWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/GUI/MainWindow.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/GUI/MainWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/GUI/MainWindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/GUI/Tablero.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/GUI/Tablero.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Alfil.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Alfil.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Alfil.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Alfil.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Caballo.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Caballo.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Caballo.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Caballo.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Peon.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Peon.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Peon.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Peon.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Pieza.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Pieza.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Pieza.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Pieza.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Reina.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Reina.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Reina.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Reina.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Rey.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Rey.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Rey.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Rey.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Torre.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Torre.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Torre.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Torre.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Src/Juego.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Src/Juego.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/Src/Juego.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Src/Juego.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Src/Tablero.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Src/Tablero.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Src/Tablero.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Src/Tablero.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/GUI/MainWindow.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/GUI/MainWindow.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Alfil.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Alfil.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Caballo.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Caballo.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Peon.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Peon.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Pieza.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Pieza.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Reina.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Reina.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Rey.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Rey.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Torre.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/Piezas/Torre.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/Src/Juego.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/Src/Juego.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/Src/Tablero.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/Src/Tablero.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/OACPROYECTO_autogen/mocs_compilation.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/OACPROYECTO_autogen/mocs_compilation.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/OACPROYECTO.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/OACPROYECTO.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/OACPROYECTO_autogen/include/ui_Tablero.h" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/OACPROYECTO_autogen/include/ui_Tablero.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+    </list>
+    <list id="2a4ea970-966f-4590-866c-20102075d0b3" name="Changes by GF76" comment="">
+      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Peon.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Peon.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Peon.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Peon.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/Piezas/Torre.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Piezas/Torre.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/GUI/MainWindow.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/Chess/GUI/MainWindow.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/OACPROYECTO_autogen/mocs_compilation.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OACPROYECTO.dir/OACPROYECTO_autogen/mocs_compilation.cpp.obj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,6 +109,11 @@
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
@@ -324,7 +311,7 @@
       <workItem from="1763492913915" duration="970000" />
       <workItem from="1763504381044" duration="170000" />
       <workItem from="1763510238626" duration="2040000" />
-      <workItem from="1763520308459" duration="17488000" />
+      <workItem from="1763520308459" duration="25258000" />
     </task>
     <task id="LOCAL-00001" summary="prueba inicial">
       <option name="closed" value="true" />
@@ -398,7 +385,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763456508987</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Implementacion de ciertos movimientos de ficha en tablero.&#10;Implementacion de mensaje de seleccion al llegar al final del tablero con el peon.&#10;Logica para saber si hay jacke y base simple para movimientos sin revisar muchas cosas.">
+      <option name="closed" value="true" />
+      <created>1763540157192</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1763540157192</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,7 +424,8 @@
     <MESSAGE value="Pequeñaaaa correccion je." />
     <MESSAGE value="Actualizacion de tablero y accion de click en casilla para verificar su conexion." />
     <MESSAGE value="Correccion de archivos por problemas al instalar msvc en Qt." />
-    <option name="LAST_COMMIT_MESSAGE" value="Correccion de archivos por problemas al instalar msvc en Qt." />
+    <MESSAGE value="Implementacion de ciertos movimientos de ficha en tablero.&#10;Implementacion de mensaje de seleccion al llegar al final del tablero con el peon.&#10;Logica para saber si hay jacke y base simple para movimientos sin revisar muchas cosas." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementacion de ciertos movimientos de ficha en tablero.&#10;Implementacion de mensaje de seleccion al llegar al final del tablero con el peon.&#10;Logica para saber si hay jacke y base simple para movimientos sin revisar muchas cosas." />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

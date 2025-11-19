@@ -32,6 +32,7 @@ public:
     Color obtenerJugadorActual();
 
     bool esJaqueMate(Color color);
+    bool generaJacke(Casilla* origen, Casilla* destino);
 
     bool esAhogado(Color color);
 
