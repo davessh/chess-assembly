@@ -127,7 +127,6 @@ public:
         MainWindow->setStatusBar(statusbar);
 
         menubar->addAction(menuJuego->menuAction());
-        menuJuego->addAction(actionMenu);
         menuJuego->addAction(actionNew_Game);
 
         retranslateUi(MainWindow);

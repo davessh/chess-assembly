@@ -36,8 +36,9 @@ public:
     Pieza(TipoPieza tipo, Color colorJugador, int fila, int columna,
           bool puedeJugarse = true, bool seHaMovido = false);
 
+
     // Aquí ya puedes usar Casilla y Tablero gracias al forward declaration
-    virtual bool movimientoValido(Casilla origen, Casilla destino, Tablero& tablero);
+    virtual bool movimientoValido(Casilla origen, Casilla destino, Tablero* tablero);
 
     void setMovido(bool valor) { seHaMovido = valor; }
     void setColor(Color color) { this->color = color; }

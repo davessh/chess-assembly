@@ -10,7 +10,7 @@ public:
     Reina(Color colorJugador, int fila, int columna)
         : Pieza(TipoPieza::REINA, colorJugador, fila, columna) {}
 
-    bool movimientoValido(Casilla origen, Casilla destino, Tablero& tablero);
+    bool movimientoValido(Casilla origen, Casilla destino, Tablero* tablero);
 };
 
 #endif

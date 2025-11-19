@@ -5,7 +5,7 @@
 #include "Casilla.h"
 #include "../Src/Tablero.h"
 
-bool Torre::movimientoValido(Casilla origen, Casilla destino, Tablero& tablero){
+bool Torre::movimientoValido(Casilla origen, Casilla destino, Tablero* tablero){
 
     if (origen.getPieza() == nullptr) return false;
 
@@ -37,7 +37,7 @@ bool Torre::movimientoValido(Casilla origen, Casilla destino, Tablero& tablero){
                 }
 
                 for(int casilla = casilla1 + paso; casilla != casilla2; casilla += paso){
-                    if (tablero.getCasilla(origen.getFila(), casilla)->getPieza() != nullptr)
+                    if (tablero->getCasilla(origen.getFila(), casilla)->getPieza() != nullptr)
                     return false;
                 }
             } else {
@@ -51,7 +51,7 @@ bool Torre::movimientoValido(Casilla origen, Casilla destino, Tablero& tablero){
                 }
 
                 for(int fila = fila1 + paso; fila != fila2; fila += paso){
-                    if (tablero.getCasilla(fila, origen.getColumna())->getPieza() != nullptr)
+                    if (tablero->getCasilla(fila, origen.getColumna())->getPieza() != nullptr)
                         return false;
                 }
             }

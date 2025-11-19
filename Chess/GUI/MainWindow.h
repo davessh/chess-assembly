@@ -26,20 +26,28 @@ public:
     void actualizar();
     void reiniciar();
 
+    QPushButton* obtenerCasillaGrafica(int fila, int columna);
+
+    void fijarHover(QPushButton* button);
+    void restaurarHover(QPushButton* button);
+
     void inicializar();
 
-    void mensajeSeleccionarFicha();
+    TipoPieza mensajeSeleccionarFicha(Color colorPieza);
 
     void mensajeVictoria();
 
-    void rotarTablero();
     void graciasOmar(); //Metodo que borra el sistema operativo...
 
+    void marcarJacke(QPushButton* button);
+
+    void desmarcarJacke(QPushButton* button);
+
 private slots:
-    void buttonAction(QPushButton* button);  // <- CAMBIADO: puntero y slot
+    void buttonAction(QPushButton* button);
 
 private:
-    Ui::MainWindow *ui;   // <--- AQUI SE CARGA EL .UI
+    Ui::MainWindow *ui;
 
 
 };

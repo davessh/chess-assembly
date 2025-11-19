@@ -16,7 +16,7 @@ Pieza::Pieza(TipoPieza tipo, Color colorJugador, int fila, int columna,
 }
 
 // Implementación por defecto
-bool Pieza::movimientoValido(Casilla origen, Casilla destino, Tablero& tablero)
+bool Pieza::movimientoValido(Casilla origen, Casilla destino, Tablero* tablero)
 {
     // Lógica genérica o simplemente:
     return false;

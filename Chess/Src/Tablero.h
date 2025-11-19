@@ -16,8 +16,12 @@ public:
  void inicializar() const;
     void mostrarTablero();
 
+    void setCasilla(int fila, int columna, Pieza* pieza);
+
     Casilla* getCasilla(int fila, int columna) const;
 
+
+    Casilla* buscarRey(Color turno) const;
 
 };
 

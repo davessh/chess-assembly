@@ -13,7 +13,7 @@ public:
         : Pieza(TipoPieza::PEON, colorJugador, fila, columna),
           alPaso(false), llegoAlFinal(false) {}
 
-    bool movimientoValido(Casilla origen, Casilla destino, Tablero& tablero);
+    bool movimientoValido(Casilla origen, Casilla destino, Tablero* tablero);
 
 };
 

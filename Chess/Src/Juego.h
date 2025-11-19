@@ -25,13 +25,11 @@ public:
 
     void reiniciar();
 
-    bool realizarMovimiento();
+    bool realizarMovimiento(Casilla* origen, Casilla* destino);
 
     void cambiarJugador();
 
     Color obtenerJugadorActual();
-
-    bool estaReyEnJaque(Color color);
 
     bool esJaqueMate(Color color);
 
@@ -39,7 +37,11 @@ public:
 
     EstadoJuego obtenerEstadoJuego();
 
-    const Tablero& obtenerTablero();
+    Tablero* obtenerTablero();
+
+    bool hayJacke(Casilla direccionRey);
+
+    bool verificarJacke();
 
     void mostrar();
 };

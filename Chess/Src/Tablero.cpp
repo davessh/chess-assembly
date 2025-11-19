@@ -18,14 +18,16 @@ Tablero::Tablero()
 }
 
 void Tablero::inicializar() const{
-    // Limpiar el tablero primero
     for (int i = 0; i < 8; i++) {
         for (int j = 0; j < 8; j++) {
-            tablero[i][j]->setPieza(nullptr);
+            Pieza* p = tablero[i][j]->getPieza();
+            if (p != nullptr) {
+
+                tablero[i][j]->setPieza(nullptr);
+            }
         }
     }
 
-    // Colocar piezas negras (fila 0 y 1)
     tablero[0][0]->setPieza(new Torre(Color::NEGRO, 0, 0));
     tablero[0][1]->setPieza(new Caballo(Color::NEGRO, 0, 1));
     tablero[0][2]->setPieza(new Alfil(Color::NEGRO, 0, 2));
@@ -55,6 +57,16 @@ void Tablero::inicializar() const{
     tablero[7][6]->setPieza(new Caballo(Color::BLANCO, 7, 6));
     tablero[7][7]->setPieza(new Torre(Color::BLANCO, 7, 7));
 }
+void Tablero::setCasilla(int fila, int columna, Pieza* pieza)
+{
+    tablero[fila][columna]->setPieza(pieza);
+
+    if (pieza != nullptr) {
+        pieza->setFila(fila);
+        pieza->setColumna(columna);
+    }
+}
+
 
 void Tablero::mostrarTablero()
 {
@@ -65,12 +77,11 @@ void Tablero::mostrarTablero()
         std::cout << (fila + 1) << " |";
         for (int col = 0; col < 8; ++col) {
             Casilla* casilla = tablero[fila][col];
-            Pieza* pieza = casilla->getPieza();  // Asumiendo que Casilla tiene getPieza()
+            Pieza* pieza = casilla->getPieza();
 
             char simbolo = '.';
 
             if (pieza != nullptr) {
-                // Letra base según tipo de pieza
                 switch (pieza->getTipo()) {
                     case TipoPieza::PEON:    simbolo = 'P'; break;
                     case TipoPieza::TORRE:   simbolo = 'R'; break; // R de Rook/Torre
@@ -80,7 +91,6 @@ void Tablero::mostrarTablero()
                     case TipoPieza::REY:     simbolo = 'K'; break;
                 }
 
-                // Blancas en mayúscula, negras en minúscula
                 if (pieza->getColor() == Color::NEGRO) {
                     simbolo = static_cast<char>(std::tolower(simbolo));
                 }
@@ -98,4 +108,21 @@ void Tablero::mostrarTablero()
 Casilla* Tablero::getCasilla(int fila, int columna) const
 {
     return tablero[fila][columna];
+}
+
+
+Casilla* Tablero::buscarRey(Color actual) const
+{
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+            Pieza* pieza = tablero[i][j]->getPieza();
+
+            if (pieza != nullptr &&
+                pieza->getTipo() == TipoPieza::REY &&
+                pieza->getColor() == actual) {
+                return tablero[i][j];
+                }
+        }
+    }
+    return nullptr;
 }
