@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C7157C3E-49C9-41A1-9A83-54ECF690FD25}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'">10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'">10.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'" Label="QtSettings">
+    <QtInstall>C:\Qt\5.15.2\msvc2019</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'" Label="QtSettings">
+    <QtInstall>C:\Qt\5.15.2\msvc2019</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'" Label="Configuration">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'" Label="Configuration">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <QtRcc Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\recursos.qrc" />
+    <QtUic Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\Tablero.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\MainWindow.cpp" />
+    <ClCompile Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\Piezas\Alfil.cpp" />
+    <ClCompile Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\Piezas\Caballo.cpp" />
+    <ClCompile Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\Piezas\Casilla.cpp" />
+    <ClCompile Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\Piezas\Peon.cpp" />
+    <ClCompile Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\Piezas\Pieza.cpp" />
+    <ClCompile Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\Piezas\Reina.cpp" />
+    <ClCompile Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\Piezas\Rey.cpp" />
+    <ClCompile Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\Piezas\Torre.cpp" />
+    <ClCompile Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\Src\Juego.cpp" />
+    <ClCompile Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\Src\main.cpp" />
+    <ClCompile Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\Src\Tablero.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\Src\Juego.h" />
+    <ClInclude Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\Src\Tablero.h" />
+    <QtMoc Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\MainWindow.h" />
+    <ClInclude Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\Piezas\Alfil.h" />
+    <ClInclude Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\Piezas\Caballo.h" />
+    <ClInclude Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\Piezas\Casilla.h" />
+    <ClInclude Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\Piezas\Peon.h" />
+    <ClInclude Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\Piezas\Pieza.h" />
+    <ClInclude Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\Piezas\Reina.h" />
+    <ClInclude Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\Piezas\Rey.h" />
+    <ClInclude Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\Piezas\Torre.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\fondo.jpg" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\AlfilBlanco.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\AlfilBlancoRotado.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\AlfilNegro.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\AlfilNegroRotado.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\CaballoBlanco.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\CaballoBlancoRotado.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\CaballoNegro.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\CaballoNegroRotado.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\PeonBlanco.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\PeonBlancoRotado.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\PeonNegro.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\PeonNegroRotado.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\ReinaBlanco.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\ReinaBlancoRotado.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\ReinaNegro.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\ReinaNegroRotado.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\ReyBlanco.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\ReyBlancoRotado.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\ReyNegro.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\ReyNegroRotado.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\TorreBlanco.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\TorreBlancoRotado.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\TorreNegro.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\TorreNegroRotado.png" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\texturaMaderaClara.jpg" />
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\texturaMaderaOscura.jpg" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
