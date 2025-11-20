@@ -5,7 +5,7 @@
 #include <QPixmap>
 #include <QGridLayout>
 #include <QDebug>
-#include <QStyle>  // <--- AGREGA ESTO AQUÍ
+#include <QStyle>
 #include <QAction>
 #include <QProcess>
 #include <QApplication>
@@ -501,7 +501,6 @@ void MainWindow::mensajeVictoria(Color ganador)
     dialog.setModal(true);
     dialog.setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::MSWindowsFixedSizeDialogHint);
 
-    // Color de fondo según el ganador
     QString colorFondo = (ganador == Color::BLANCO) ? "#F5F5DC" : "#2C2C2C";
     QString colorTexto = (ganador == Color::BLANCO) ? "#000000" : "#FFFFFF";
     QString colorBoton = (ganador == Color::BLANCO) ? "#FFD700" : "#C0C0C0";
@@ -523,7 +522,6 @@ void MainWindow::mensajeVictoria(Color ganador)
     titulo->setAlignment(Qt::AlignCenter);
     mainLayout->addWidget(titulo);
 
-    // Imagen del rey ganador
     QLabel *imagenRey = new QLabel();
     imagenRey->setFixedSize(120, 120);
     imagenRey->setScaledContents(true);
@@ -600,8 +598,8 @@ void MainWindow::mostrarTurnoActual(Color turno)
     QString fuente = "Garamond";
     QString size = "30px";
 
-    QString cafeOscuro = "#5A3E2B";   // combina con cuadros oscuros
-    QString cafeClaro  = "#D7B892";   // combina con cuadros claros
+    QString cafeOscuro = "#5A3E2B";
+    QString cafeClaro  = "#D7B892";
 
     QString bordeColor = (turno == Color::BLANCO) ? cafeOscuro : cafeClaro;
 

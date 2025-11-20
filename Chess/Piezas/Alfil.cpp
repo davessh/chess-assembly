@@ -9,7 +9,6 @@ bool Alfil::movimientoValido(Casilla origen, Casilla destino, Tablero* tablero)
     {
         if (origen.getPieza()->getColor() != destino.getPieza()->getColor() && !sonIguales)
         {
-            // El alfil se mueve en diagonal
             int difFila = abs(destino.getFila() - origen.getFila());
             int difCol = abs(destino.getColumna() - origen.getColumna());
 

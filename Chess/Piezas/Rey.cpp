@@ -2,16 +2,30 @@
 #include "Rey.h"
 #include "Casilla.h"
 
-    bool Rey::movimientoValido(Casilla origen, Casilla destino, Tablero* tablero) {
+bool Rey::movimientoValido(Casilla origen, Casilla destino, Tablero* tablero)
+{
     if (origen.getPieza() == nullptr) return false;
 
-    bool sonIguales = (origen.getFila() == destino.getFila()) &&
-                      (origen.getColumna() == destino.getColumna());
-    if (sonIguales) return false;
+    if (destino.getPieza() != nullptr) {
+        if (destino.getPieza()->getColor() == origen.getPieza()->getColor()) {
+            return false;
+        }
+    }
 
-    // El rey se mueve una casilla en cualquier dirección
-    int difFila = abs(destino.getFila() - origen.getFila());
-    int difCol = abs(destino.getColumna() - origen.getColumna());
+    int difFila = std::abs(destino.getFila() - origen.getFila());
+    int difCol = std::abs(destino.getColumna() - origen.getColumna());
 
-    return (difFila <= 1 && difCol <= 1);
+    if (difFila <= 1 && difCol <= 1) {
+        return true;
+    }
+
+    // LOGICA DE ENROQUE (OPCIONAL - Comenta esto si no lo usas aún o si causa el crash)
+    /*
+    if (!this->seHaMovido && difFila == 0 && difCol == 2) {
+        // Verificar lógica de enroque aquí con cuidado de punteros nulos
+        // ...
+    }
+    */
+
+    return false;
 }

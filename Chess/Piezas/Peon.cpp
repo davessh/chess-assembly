@@ -13,7 +13,7 @@ bool Peon::movimientoValido(Casilla origen, Casilla destino, Tablero* tablero)
     int filaInicial;
     Pieza* piezaDestino = destino.getPieza();
     if (origen.getPieza() == nullptr) return false;
-    
+
     bool sonIguales = (origen.getFila() == destino.getFila()) &&
                       (origen.getColumna() == destino.getColumna());
     if (sonIguales) return false;
@@ -49,6 +49,28 @@ bool Peon::movimientoValido(Casilla origen, Casilla destino, Tablero* tablero)
     {
         esPrimerMovimiento = false;
         return true;
+    }
+
+    if (abs(columnaDestino - columnaOrigen) == 1 && filaDestino == filaOrigen + direccion && piezaDestino == nullptr)
+    {
+        Pieza* pieza = tablero->getCasilla(filaOrigen,columnaDestino)->getPieza();
+
+        if (pieza != nullptr &&
+            pieza->getTipo() == TipoPieza::PEON &&
+            pieza->getColor() != origen.getPieza()->getColor())
+        {
+            Peon* peon = (Peon*)pieza;
+            if (peon -> alPaso)
+            {
+                esPrimerMovimiento = false;
+                return true;
+            }
+        }
+
+
+        {
+
+        }
     }
 
     return false;

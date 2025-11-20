@@ -97,11 +97,21 @@ bool Juego::realizarMovimiento(Casilla* origen, Casilla* destino)
 bool Juego::verificarJacke()
 {
     Casilla* casillaRey = tablero.buscarRey(jugadorActual);
+
+    if (casillaRey == nullptr) {
+        return false;
+    }
+
     return hayJacke(*casillaRey);
 }
 
 bool Juego::hayJacke(Casilla direccionRey)
 {
+
+    if (direccionRey.getPieza() == nullptr) {
+        return false;
+    }
+
     for (int i = 0; i < 8; i++)
     {
         for (int j = 0; j < 8; j++)
@@ -176,7 +186,11 @@ bool Juego::generaJacke(Casilla* origen, Casilla* destino)
     tablero.setCasilla(origen->getFila(), origen->getColumna(), nullptr);
 
     Casilla* casillaRey = tablero.buscarRey(jugadorActual);
-    bool enJaque = hayJacke(*casillaRey);
+
+    bool enJaque = false;
+    if (casillaRey != nullptr) {
+        enJaque = hayJacke(*casillaRey);
+    }
 
     tablero.setCasilla(destino->getFila(), destino->getColumna(), piezaCapturada);
     tablero.setCasilla(origen->getFila(), origen->getColumna(), piezaMovida);
