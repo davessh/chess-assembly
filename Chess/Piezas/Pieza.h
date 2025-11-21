@@ -37,8 +37,11 @@ public:
           bool puedeJugarse = true, bool seHaMovido = false);
 
 
-    // Aquí ya puedes usar Casilla y Tablero gracias al forward declaration
     virtual bool movimientoValido(Casilla origen, Casilla destino, Tablero* tablero);
+    virtual void setAlPaso(bool valor) {}
+    virtual bool getAlPaso() const { return false; }
+    virtual bool getLlegoAlFinal() const { return false; }
+    virtual void setLlegoAlFinal(bool valor) {}
 
     void setMovido(bool valor) { seHaMovido = valor; }
     void setColor(Color color) { this->color = color; }
@@ -46,6 +49,8 @@ public:
     void setColumna(int columna) { this->columna = columna; }
     void setTipo(TipoPieza tipo) { this->tipo = tipo; }
     void setPuedeJugarse(bool valor) { this->puedeJugarse = valor; }
+
+
 
     Color getColor() const { return color; }
     int getFila() const { return fila; }

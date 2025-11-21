@@ -7,7 +7,6 @@
 
 class Tablero {
 private:
-    Casilla* peonPasoDos = nullptr;
     Casilla* tablero[8][8];
 
 public:
@@ -23,9 +22,7 @@ public:
 
     Casilla* buscarRey(Color turno) const;
 
-    Casilla* getPeonPasoDos (){return peonPasoDos;}
-
-    void setPeonPasoDos(Casilla* casilla){peonPasoDos = casilla;}
+    
 };
 
 

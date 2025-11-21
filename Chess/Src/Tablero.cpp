@@ -9,7 +9,6 @@
 
 Tablero::Tablero()
 {
-    // Inicializar todas las casillas vacías (sin piezas)
     for (int i = 0; i < 8; i++) {
         for (int j = 0; j < 8; j++) {
             tablero[i][j] = new Casilla(i, j, nullptr);
@@ -37,17 +36,14 @@ void Tablero::inicializar() const{
     tablero[0][6]->setPieza(new Caballo(Color::NEGRO, 0, 6));
     tablero[0][7]->setPieza(new Torre(Color::NEGRO, 0, 7));
 
-    // Peones negros
     for (int j = 0; j < 8; j++) {
         tablero[1][j]->setPieza(new Peon(Color::NEGRO, 1, j));
     }
 
-    // Peones blancos
     for (int j = 0; j < 8; j++) {
         tablero[6][j]->setPieza(new Peon(Color::BLANCO, 6, j));
     }
 
-    // Colocar piezas blancas (fila 7)
     tablero[7][0]->setPieza(new Torre(Color::BLANCO, 7, 0));
     tablero[7][1]->setPieza(new Caballo(Color::BLANCO, 7, 1));
     tablero[7][2]->setPieza(new Alfil(Color::BLANCO, 7, 2));
@@ -84,9 +80,9 @@ void Tablero::mostrarTablero()
             if (pieza != nullptr) {
                 switch (pieza->getTipo()) {
                     case TipoPieza::PEON:    simbolo = 'P'; break;
-                    case TipoPieza::TORRE:   simbolo = 'R'; break; // R de Rook/Torre
-                    case TipoPieza::CABALLO: simbolo = 'N'; break; // N de kNight
-                    case TipoPieza::ALFIL:   simbolo = 'B'; break; // B de Bishop/Alfil
+                    case TipoPieza::TORRE:   simbolo = 'R'; break; 
+                    case TipoPieza::CABALLO: simbolo = 'N'; break; 
+                    case TipoPieza::ALFIL:   simbolo = 'B'; break; 
                     case TipoPieza::REINA:   simbolo = 'Q'; break;
                     case TipoPieza::REY:     simbolo = 'K'; break;
                 }

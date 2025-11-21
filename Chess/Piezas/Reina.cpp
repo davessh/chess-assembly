@@ -9,7 +9,7 @@
                       (origen.getColumna() == destino.getColumna());
     if (sonIguales) return false;
 
-
+ 
 
     // La reina se mueve como torre o alfil
     int difFila = abs(destino.getFila() - origen.getFila());

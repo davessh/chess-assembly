@@ -38,6 +38,9 @@ public:
 
     void mensajeVictoria(Color ganador);
 
+    void mensajeEmpate();
+
+
     void mostrarTurnoActual(Color turno);
 
     void graciasOmar(); //Metodo que borra el sistema operativo...

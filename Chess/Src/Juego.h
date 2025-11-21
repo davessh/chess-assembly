@@ -2,7 +2,7 @@
 #define OACPROYECTO_JUEGO_H
 
 #include "Tablero.h"
-#include "../Piezas/Pieza.h"   // Necesario para el enum Color
+#include "../Piezas/Pieza.h"   
 
 enum class EstadoJuego {
     JUGANDO,
@@ -31,6 +31,8 @@ public:
 
     Color obtenerJugadorActual();
 
+	void setEstado(EstadoJuego nuevoEstado);
+
     bool esJaqueMate(Color color);
     bool generaJacke(Casilla* origen, Casilla* destino);
 
@@ -43,6 +45,14 @@ public:
     bool hayJacke(Casilla direccionRey);
 
     bool verificarJacke();
+
+	bool esTablas();
+
+    bool fichasInsuficientes();
+
+	bool hayMovimientosDisponibles(Color turno);
+
+	bool hayPromocionPendiente(Casilla* casilla);
 
     void mostrar();
 };

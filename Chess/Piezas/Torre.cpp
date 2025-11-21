@@ -11,8 +11,7 @@ bool Torre::movimientoValido(Casilla origen, Casilla destino, Tablero* tablero){
 
     bool sonIguales = (destino.getPieza() != nullptr &&
             destino.getPieza()->getColor() == origen.getPieza()->getColor());
-
-            //mismo lugar
+    
             if(origen.getFila() == destino.getFila() &&
             origen.getColumna() == destino.getColumna()){
                 return false;
@@ -21,7 +20,6 @@ bool Torre::movimientoValido(Casilla origen, Casilla destino, Tablero* tablero){
             bool filaRecta = origen.getFila() == destino.getFila();
             bool columnaRecta = origen.getColumna() == destino.getColumna();
 
-            //solo puede ir en linea recta
             if(!filaRecta && !columnaRecta){
                 return false;
             }

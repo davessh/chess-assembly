@@ -10,6 +10,11 @@
 #include <QProcess>
 #include <QApplication>
 #include <QDialog>
+#include "../Piezas/Reina.h"   
+#include "../Piezas/Caballo.h"   
+#include "../Piezas/Alfil.h"   
+#include "../Piezas/Torre.h"   
+
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -84,7 +89,7 @@ void MainWindow::inicializar()
     }
 
     // Tamaño fijo para cada casilla
-    int tamañoCasilla = 80;
+    int sizeCasilla = 80;
 
     gridTablero->setSpacing(0);
 
@@ -93,7 +98,7 @@ for (int fila = 0; fila < 8; fila++) {
 
         QPushButton* casilla = new QPushButton();
 
-        casilla->setFixedSize(tamañoCasilla, tamañoCasilla);
+        casilla->setFixedSize(sizeCasilla, sizeCasilla);
         casilla->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         connect(casilla, &QPushButton::clicked, this,
                             [this, casilla]() { buttonAction(casilla); });
@@ -163,7 +168,6 @@ void MainWindow::buttonAction(QPushButton* button)
     int fila = button->property("fila").toInt();
     int columna = button->property("columna").toInt();
 
-    // Optimización: No hace falta el bucle for, acceso directo
     Tablero *tablero = juego.obtenerTablero();
     Casilla* casillaClickeada = tablero->getCasilla(fila, columna);
 
@@ -182,7 +186,7 @@ void MainWindow::buttonAction(QPushButton* button)
     else
     {
         if (fichaSeleccionada == casillaClickeada) {
-            restaurarHover(button); // Apagar luz
+            restaurarHover(button); 
             fichaSeleccionada = nullptr;
             qDebug() << "Selección cancelada";
             return;
@@ -195,7 +199,7 @@ void MainWindow::buttonAction(QPushButton* button)
             if(btnAnterior) restaurarHover(btnAnterior);
 
             fichaSeleccionada = casillaClickeada;
-            fijarHover(button); // Iluminar la nueva
+            fijarHover(button); 
             qDebug() << "Cambio de ficha seleccionada";
             return;
         }
@@ -203,23 +207,69 @@ void MainWindow::buttonAction(QPushButton* button)
         if (juego.realizarMovimiento(fichaSeleccionada, casillaClickeada))
         {
             QPushButton* btnOrigen = obtenerCasillaGrafica(fichaSeleccionada->getFila(), fichaSeleccionada->getColumna());
-            if(btnOrigen) restaurarHover(btnOrigen);
+            if (btnOrigen) restaurarHover(btnOrigen);
 
+            Casilla* seleccionadaTemp = casillaClickeada;
             fichaSeleccionada = nullptr;
 
+            if (juego.hayPromocionPendiente(seleccionadaTemp)) {
+                TipoPieza tipoSeleccionado = mensajeSeleccionarFicha(seleccionadaTemp->getPieza()->getColor());
+                Color color = seleccionadaTemp->getPieza()->getColor();
+
+                delete seleccionadaTemp->getPieza();
+
+                Pieza* nuevaPieza = nullptr;
+
+                if (tipoSeleccionado == TipoPieza::REINA) {
+                    nuevaPieza = new Reina(color, seleccionadaTemp->getFila(), seleccionadaTemp->getColumna());
+                    seleccionadaTemp->setPieza(nuevaPieza);
+                }
+                else if (tipoSeleccionado == TipoPieza::ALFIL) {
+                    nuevaPieza = new Alfil(color, seleccionadaTemp->getFila(), seleccionadaTemp->getColumna());
+                    seleccionadaTemp->setPieza(nuevaPieza);
+                }
+                else if (tipoSeleccionado == TipoPieza::CABALLO) {
+                    nuevaPieza = new Caballo(color, seleccionadaTemp->getFila(), seleccionadaTemp->getColumna());
+                    seleccionadaTemp->setPieza(nuevaPieza);
+                }
+                else if (tipoSeleccionado == TipoPieza::TORRE) {
+                    nuevaPieza = new Torre(color, seleccionadaTemp->getFila(), seleccionadaTemp->getColumna());
+                    seleccionadaTemp->setPieza(nuevaPieza);
+                }
+
+                if (nuevaPieza) {
+                    Color jugadorActual = juego.obtenerJugadorActual();
+
+                    if (juego.verificarJacke()) {
+                        if (juego.esJaqueMate(jugadorActual)) {
+                            juego.setEstado(EstadoJuego::JAQUE_MATE);
+                        }
+                        else {
+                            juego.setEstado(EstadoJuego::JAQUE);
+                        }
+                    }
+                }
+            }
+
             actualizar();
+
             if (juego.obtenerEstadoJuego() == EstadoJuego::JAQUE_MATE)
             {
                 Color ganador;
                 if (juego.obtenerJugadorActual() == Color::BLANCO)
                 {
                     ganador = Color::NEGRO;
-                }else
+                }
+                else
                 {
                     ganador = Color::BLANCO;
                 }
                 mensajeVictoria(ganador);
             }
+            else if (juego.obtenerEstadoJuego() == EstadoJuego::TABLAS) {
+                mensajeEmpate();
+            }
+
             qDebug() << "Movimiento exitoso";
         }
         else
@@ -234,29 +284,25 @@ void MainWindow::buttonAction(QPushButton* button)
 QPushButton* MainWindow::obtenerCasillaGrafica(int fila, int columna)
 {
     QGridLayout* gridTablero = ui->tablero;
-    // 1. Obtenemos el item del layout (puede ser nullptr si no hay nada ahí)
     QLayoutItem* item = gridTablero->itemAtPosition(fila, columna);
 
-    // 2. Obtenemos el widget genérico y lo convertimos a botón
-    // Si item es nulo, el cast devuelve nullptr automáticamente, evitando el crash
+  
     QPushButton* button = item ? qobject_cast<QPushButton*>(item->widget()) : nullptr;
 
     return button;
 }
 
 void MainWindow::restaurarHover(QPushButton* button) {
-    button->setProperty("hoverFijo", false); // Apagar la bandera
-    button->style()->unpolish(button);        // Refrescar estilo
+    button->setProperty("hoverFijo", false); 
+    button->style()->unpolish(button);        
     button->style()->polish(button);
 }
 
 
 void MainWindow::fijarHover(QPushButton* button)
 {
-    // 1. Activamos la propiedad personalizada "hoverFijo"
     button->setProperty("hoverFijo", true);
 
-    // 2. Forzamos a Qt a volver a evaluar el estilo inmediatamente
     button->style()->unpolish(button);
     button->style()->polish(button);
 }
@@ -308,23 +354,19 @@ void MainWindow::actualizar()
     for (int fila = 0; fila < 8; ++fila) {
         for (int col = 0; col < 8; ++col) {
 
-            // 1) Casilla lógica
             Casilla* casilla = tablero->getCasilla(fila, col);
             Pieza* pieza = casilla ? casilla->getPieza() : nullptr;
 
-            // 2) Botón en el grid
             QLayoutItem* item = gridTablero->itemAtPosition(fila, col);
             QPushButton* boton = item ? qobject_cast<QPushButton*>(item->widget()) : nullptr;
             if (!boton) continue;
 
-            // 3) Decidir qué icono poner
             if (!pieza) {
                 boton->setIcon(QIcon());
-                boton->setIconSize(QSize()); // opcional
+                boton->setIconSize(QSize()); 
                 continue;
             }
 
-            // 4) Elegir la ruta de la imagen según tipo/color
             QString rutaIcono;
 
             switch (pieza->getTipo()) {
@@ -340,7 +382,6 @@ void MainWindow::actualizar()
                         : ":/imagenes/Piezas/TorreNegro.png";
                     break;
 
-                // Completa tú:
                 case TipoPieza::CABALLO:
                 rutaIcono = (pieza->getColor() == Color::BLANCO)
                         ? ":/imagenes/Piezas/CaballoBlanco.png"
@@ -368,10 +409,8 @@ void MainWindow::actualizar()
                         ? ":/imagenes/Piezas/ReyBlanco.png"
                         : ":/imagenes/Piezas/ReyNegro.png";
                 break;
-                    // ...
             }
 
-            // 5) Aplicar icono al botón
             boton->setIcon(QIcon(rutaIcono));
             boton->setIconSize(boton->size());
         }
@@ -390,7 +429,6 @@ void MainWindow::reiniciar()
 
 TipoPieza MainWindow::mensajeSeleccionarFicha(Color colorPieza)
 {
-    // Crear el dialog temporal
     QDialog dialog(this);
     dialog.setWindowTitle("Promoción de Peón");
     dialog.setModal(true);
@@ -411,7 +449,7 @@ TipoPieza MainWindow::mensajeSeleccionarFicha(Color colorPieza)
     gridLayout->setContentsMargins(20, 20, 20, 20);
     mainLayout->addLayout(gridLayout);
 
-    TipoPieza piezaSeleccionada = TipoPieza::REINA; // Default
+    TipoPieza piezaSeleccionada = TipoPieza::REINA;
 
     struct PiezaInfo {
         TipoPieza tipo;
@@ -511,7 +549,6 @@ void MainWindow::mensajeVictoria(Color ganador)
     mainLayout->setSpacing(20);
     mainLayout->setContentsMargins(30, 30, 30, 30);
 
-    // Título
     QLabel *titulo = new QLabel("¡JAQUE MATE!");
     titulo->setStyleSheet(QString(
         "color: %1; "
@@ -537,7 +574,6 @@ void MainWindow::mensajeVictoria(Color ganador)
     }
     mainLayout->addWidget(imagenRey, 0, Qt::AlignCenter);
 
-    // Mensaje de victoria
     QString textoGanador = (ganador == Color::BLANCO) ? "BLANCAS" : "NEGRAS";
     QLabel *mensaje = new QLabel(QString("¡Las %1 han ganado!").arg(textoGanador));
     mensaje->setStyleSheet(QString(
@@ -548,7 +584,6 @@ void MainWindow::mensajeVictoria(Color ganador)
     mensaje->setAlignment(Qt::AlignCenter);
     mainLayout->addWidget(mensaje);
 
-    // Botones
     QHBoxLayout *botonesLayout = new QHBoxLayout();
     botonesLayout->setSpacing(15);
 
@@ -589,7 +624,7 @@ void MainWindow::mensajeVictoria(Color ganador)
     botonesLayout->addWidget(btnSalir);
     mainLayout->addLayout(botonesLayout);
 
-    dialog.setFixedSize(400, 400);
+    dialog.setFixedSize(600, 400);
     dialog.exec();
 }
 
@@ -655,7 +690,87 @@ void MainWindow::mostrarTurnoActual(Color turno)
     }
 }
 
+void MainWindow::mensajeEmpate()
+{
+    QDialog dialog(this);
+    dialog.setWindowTitle("¡Empate!");
+    dialog.setModal(true);
+    dialog.setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::MSWindowsFixedSizeDialogHint);
 
+    QString colorFondo = "#8B7355";  
+    QString colorTexto = "#FFFFFF";
+    QString colorBoton = "#D4AF37";  
+
+    dialog.setStyleSheet(QString("QDialog { background-color: %1; }").arg(colorFondo));
+
+    QVBoxLayout* mainLayout = new QVBoxLayout(&dialog);
+    mainLayout->setSpacing(20);
+    mainLayout->setContentsMargins(30, 30, 30, 30);
+
+    QLabel* titulo = new QLabel("¡EMPATE!");
+    titulo->setStyleSheet(QString(
+        "color: %1; "
+        "font-size: 28pt; "
+        "font-weight: bold; "
+        "font-family: 'Arial Black';"
+    ).arg(colorTexto));
+    titulo->setAlignment(Qt::AlignCenter);
+    mainLayout->addWidget(titulo);
+
+    QLabel* mensaje = new QLabel("La partida ha terminado en tablas");
+    mensaje->setStyleSheet(QString(
+        "color: %1; "
+        "font-size: 18pt; "
+        "font-weight: bold;"
+    ).arg(colorTexto));
+    mensaje->setAlignment(Qt::AlignCenter);
+    mainLayout->addWidget(mensaje);
+
+    mainLayout->addSpacing(120);
+
+    QHBoxLayout* botonesLayout = new QHBoxLayout();
+    botonesLayout->setSpacing(15);
+
+    QPushButton* btnNuevaPartida = new QPushButton("Nueva Partida");
+    QPushButton* btnSalir = new QPushButton("Salir");
+
+    QString estiloBoton = QString(
+        "QPushButton { "
+        "   background-color: %1; "
+        "   color: %2; "
+        "   border: 3px solid %2; "
+        "   border-radius: 8px; "
+        "   padding: 12px 24px; "
+        "   font-size: 14pt; "
+        "   font-weight: bold; "
+        "}"
+        "QPushButton:hover { "
+        "   background-color: %2; "
+        "   color: %1; "
+        "   border: 3px solid %1; "
+        "}"
+    ).arg(colorBoton).arg(colorTexto);
+
+    btnNuevaPartida->setStyleSheet(estiloBoton);
+    btnSalir->setStyleSheet(estiloBoton);
+
+    connect(btnNuevaPartida, &QPushButton::clicked, [this, &dialog]() {
+        dialog.accept();
+        reiniciar();
+        });
+
+    connect(btnSalir, &QPushButton::clicked, [&dialog]() {
+        dialog.accept();
+        QApplication::quit();
+        });
+
+    botonesLayout->addWidget(btnNuevaPartida);
+    botonesLayout->addWidget(btnSalir);
+    mainLayout->addLayout(botonesLayout);
+
+    dialog.setFixedSize(600, 400);
+    dialog.exec();
+}
 
 void MainWindow::graciasOmar()
 {
