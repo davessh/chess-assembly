@@ -35,7 +35,7 @@ public:
     void setEstado(EstadoJuego nuevoEstado);
 
     bool esJaqueMate(Color color);
-    bool generaJacke(Casilla* origen, Casilla* destino);
+    bool generaJaque(Casilla* origen, Casilla* destino);
 
     bool esAhogado(Color color);
 
@@ -43,9 +43,9 @@ public:
 
     Tablero* obtenerTablero();
 
-    bool hayJacke(Casilla direccionRey);
+    bool hayJaque(Casilla direccionRey);
 
-    bool verificarJacke();
+    bool verificarJaque();
 
     bool esTablas();
 

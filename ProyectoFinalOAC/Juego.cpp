@@ -71,7 +71,7 @@ bool Juego::realizarMovimiento(Casilla* origen, Casilla* destino)
 
 
 
-    if (!pieza->movimientoValido(*origen, *destino, &tablero) || generaJacke(origen, destino))
+    if (!pieza->movimientoValido(*origen, *destino, &tablero) || generaJaque(origen, destino))
         return false;
 
     TipoPieza tipoPieza = pieza->getTipo();
@@ -235,7 +235,7 @@ bool Juego::realizarMovimiento(Casilla* origen, Casilla* destino)
 
     EstadoJuego estadoPrevio = estado;
 
-    if (verificarJacke()) {
+    if (verificarJaque()) {
         if (esJaqueMate(jugadorActual)) {
             __asm {
                 mov estadoPrevio, 2
@@ -262,7 +262,7 @@ bool Juego::realizarMovimiento(Casilla* origen, Casilla* destino)
 }
 
 
-bool Juego::verificarJacke()
+bool Juego::verificarJaque()
 {
     Casilla* casillaRey = tablero.buscarRey(jugadorActual);
 
@@ -270,11 +270,11 @@ bool Juego::verificarJacke()
         return false;
     }
 
-    return hayJacke(*casillaRey);
+    return hayJaque(*casillaRey);
 }
 
 
-bool Juego::hayJacke(Casilla direccionRey)
+bool Juego::hayJaque(Casilla direccionRey)
 {
     Pieza* piezaRey = direccionRey.getPieza();
     __asm {
@@ -355,7 +355,7 @@ Color Juego::obtenerJugadorActual()
 
 bool Juego::esJaqueMate(Color turno)
 {
-    if (!verificarJacke()) {
+    if (!verificarJaque()) {
         return false;
     }
     int i = 0, j = 0;
@@ -404,7 +404,7 @@ bool Juego::esJaqueMate(Color turno)
     Casilla* casilla = tablero.getCasilla(movi, movj);
 
     if (pieza->movimientoValido(*casillaPieza, *casilla, &tablero)
-        && !generaJacke(casillaPieza, casilla))
+        && !generaJaque(casillaPieza, casilla))
     {
         return false;
     }
@@ -432,7 +432,7 @@ bool Juego::esJaqueMate(Color turno)
     return true;
 }
 
-bool Juego::generaJacke(Casilla* origen, Casilla* destino)
+bool Juego::generaJaque(Casilla* origen, Casilla* destino)
 {
     Pieza* piezaCapturada = destino->getPieza();
     Pieza* piezaMovida = origen->getPieza();
@@ -448,7 +448,7 @@ bool Juego::generaJacke(Casilla* origen, Casilla* destino)
 
     bool enJaque = false;
     if (casillaRey != nullptr) {
-        enJaque = hayJacke(*casillaRey);
+        enJaque = hayJaque(*casillaRey);
     }
     else {
         enJaque = true;
@@ -466,7 +466,7 @@ bool Juego::esAhogado(Color turno)
 
     if (rey == nullptr) return false;
 
-    if (!hayMovimientosDisponibles(turno) && !hayJacke(*rey)) {
+    if (!hayMovimientosDisponibles(turno) && !hayJaque(*rey)) {
         return true;
     }
 
@@ -524,7 +524,7 @@ bool Juego::hayMovimientosDisponibles(Color turno) {
     Casilla* casilla = tablero.getCasilla(movi, movj);
 
     if (pieza->movimientoValido(*casillaPieza, *casilla, &tablero)
-        && !generaJacke(casillaPieza, casilla))
+        && !generaJaque(casillaPieza, casilla))
     {
         return true;
     }

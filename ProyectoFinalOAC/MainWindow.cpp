@@ -245,7 +245,7 @@ void MainWindow::buttonAction(QPushButton* button)
                 if (nuevaPieza) {
                     Color jugadorActual = juego.obtenerJugadorActual();
 
-                    if (juego.verificarJacke()) {
+                    if (juego.verificarJaque()) {
                         if (juego.esJaqueMate(jugadorActual)) {
                             juego.setEstado(EstadoJuego::JAQUE_MATE);
                         }
