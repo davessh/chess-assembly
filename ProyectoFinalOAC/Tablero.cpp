@@ -11,12 +11,8 @@
 #include "Peon.h"
 
 Tablero::Tablero()
-//{
-    //for (int i = 0; i < 8; i++) {
-        //for (int j = 0; j < 8; j++) {
-            //tablero[i][j] = new Casilla(i, j, nullptr);
-       // }
-  // }
+
+
 {
     int i = 0;
     int j = 0;
