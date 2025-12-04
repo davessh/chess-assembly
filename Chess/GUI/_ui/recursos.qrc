@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>imagenes/texturaMaderaOscura.jpg</file>
+        <file>imagenes/texturaMaderaClara.jpg</file>
+        <file>imagenes/fondo.jpg</file>
+
+        <file>imagenes/Piezas/PeonBlanco.png</file>
+        <file>imagenes/Piezas/PeonNegro.png</file>
+        <file>imagenes/Piezas/TorreBlanco.png</file>
+        <file>imagenes/Piezas/TorreNegro.png</file>
+        <file>imagenes/Piezas/AlfilBlanco.png</file>
+        <file>imagenes/Piezas/AlfilNegro.png</file>
+        <file>imagenes/Piezas/ReyBlanco.png</file>
+        <file>imagenes/Piezas/ReyNegro.png</file>
+        <file>imagenes/Piezas/ReinaBlanco.png</file>
+        <file>imagenes/Piezas/ReinaNegro.png</file>
+        <file>imagenes/Piezas/CaballoBlanco.png</file>
+        <file>imagenes/Piezas/CaballoNegro.png</file>
+
+
+
+
+    </qresource>
+</RCC>
