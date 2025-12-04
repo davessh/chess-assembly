@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>qml;cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Chess">
+      <UniqueIdentifier>{ab2a952c-68c6-4222-8201-772581014226}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Chess\GUI">
+      <UniqueIdentifier>{85b937dd-5ab0-4fd6-af9d-8f25111c62b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Chess\Piezas">
+      <UniqueIdentifier>{06648b45-fdab-44ca-aff3-50006ed2d47b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Chess\Src">
+      <UniqueIdentifier>{7aa632bd-311b-459a-bed6-63b8a8becf7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Chess\GUI\imagenes">
+      <UniqueIdentifier>{c8d7356f-18b0-4ee7-9efd-54f84bf6a563}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Chess\GUI\imagenes\Piezas">
+      <UniqueIdentifier>{30da6f37-3941-40af-96dd-e6fa6f108a12}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Juego.cpp">
+      <Filter>Source Files\Chess\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files\Chess\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Tablero.cpp">
+      <Filter>Source Files\Chess\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="MainWindow.cpp">
+      <Filter>Source Files\Chess\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuWindow.cpp">
+      <Filter>Source Files\Chess\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Casilla.cpp">
+      <Filter>Source Files\Chess\Piezas</Filter>
+    </ClCompile>
+    <ClCompile Include="Pieza.cpp">
+      <Filter>Source Files\Chess\Piezas</Filter>
+    </ClCompile>
+    <ClCompile Include="Reina.cpp">
+      <Filter>Source Files\Chess\Piezas</Filter>
+    </ClCompile>
+    <ClCompile Include="Peon.cpp">
+      <Filter>Source Files\Chess\Piezas</Filter>
+    </ClCompile>
+    <ClCompile Include="Torre.cpp">
+      <Filter>Source Files\Chess\Piezas</Filter>
+    </ClCompile>
+    <ClCompile Include="Rey.cpp">
+      <Filter>Source Files\Chess\Piezas</Filter>
+    </ClCompile>
+    <ClCompile Include="Alfil.cpp">
+      <Filter>Source Files\Chess\Piezas</Filter>
+    </ClCompile>
+    <ClCompile Include="Caballo.cpp">
+      <Filter>Source Files\Chess\Piezas</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Juego.h">
+      <Filter>Source Files\Chess\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Tablero.h">
+      <Filter>Source Files\Chess\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Casilla.h">
+      <Filter>Source Files\Chess\Piezas</Filter>
+    </ClInclude>
+    <ClInclude Include="Pieza.h">
+      <Filter>Source Files\Chess\Piezas</Filter>
+    </ClInclude>
+    <ClInclude Include="Reina.h">
+      <Filter>Source Files\Chess\Piezas</Filter>
+    </ClInclude>
+    <ClInclude Include="Peon.h">
+      <Filter>Source Files\Chess\Piezas</Filter>
+    </ClInclude>
+    <ClInclude Include="Torre.h">
+      <Filter>Source Files\Chess\Piezas</Filter>
+    </ClInclude>
+    <ClInclude Include="Rey.h">
+      <Filter>Source Files\Chess\Piezas</Filter>
+    </ClInclude>
+    <ClInclude Include="Alfil.h">
+      <Filter>Source Files\Chess\Piezas</Filter>
+    </ClInclude>
+    <ClInclude Include="Caballo.h">
+      <Filter>Source Files\Chess\Piezas</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="MenuWindow.h">
+      <Filter>Source Files\Chess\GUI</Filter>
+    </QtMoc>
+    <QtMoc Include="MainWindow.h">
+      <Filter>Source Files\Chess\GUI</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\MainWindow.ui">
+      <Filter>Source Files\Chess\GUI</Filter>
+    </QtUic>
+    <QtUic Include="..\..\ProyectoFinalArqui\ProyectoFinalArqui\MenuWindow.ui">
+      <Filter>Source Files\Chess\GUI</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\recursos.qrc">
+      <Filter>Source Files\Chess\GUI</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\texturaMaderaOscura.jpg">
+      <Filter>Source Files\Chess\GUI\imagenes</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\fondo.jpg">
+      <Filter>Source Files\Chess\GUI\imagenes</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\fondoAjedrez.jpg">
+      <Filter>Source Files\Chess\GUI\imagenes</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\texturaMaderaClara.jpg">
+      <Filter>Source Files\Chess\GUI\imagenes</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\TorreNegroRotado.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\AlfilBlanco.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\AlfilBlancoRotado.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\AlfilNegro.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\AlfilNegroRotado.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\CaballoBlanco.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\CaballoBlancoRotado.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\CaballoNegro.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\CaballoNegroRotado.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\PeonBlanco.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\PeonBlancoRotado.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\PeonNegro.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\PeonNegroRotado.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\ReinaBlanco.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\ReinaBlancoRotado.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\ReinaNegro.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\ReinaNegroRotado.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\ReyBlanco.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\ReyBlancoRotado.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\ReyNegro.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\ReyNegroRotado.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\TorreBlanco.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\TorreBlancoRotado.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+    <Image Include="..\..\..\..\CLionProjects\chess-assembly_project\Chess\GUI\_ui\imagenes\Piezas\TorreNegro.png">
+      <Filter>Source Files\Chess\GUI\imagenes\Piezas</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
